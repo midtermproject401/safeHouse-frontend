@@ -1,0 +1,216 @@
+.sectionTitle h4 {
+  font-size: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: rgb(43, 37, 36);
+  text-align: center;
+}
+.sectionTitle div {
+  width: 10rem;
+  height: 5px;
+  background: #af9a7d;
+  margin: 1.7rem auto;
+}
+
+.article {
+  display: block;
+}
+
+.imgContainer {
+  position: relative;
+}
+.imgContainer img {
+  width: 100%;
+  height: 204px;
+  display: block;
+  transition: var(--mainTransition);
+}
+.roomInfo {
+  background: gray;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: var(--mainSpacing);
+}
+.priceTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.3rem 0.6rem 0.5rem;
+  border-bottom-right-radius: 1rem;
+  font-size: 0.5rem;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+.priceTop h6 {
+  margin-bottom: 0;
+  /* background-color: hotpink; */
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+.featuredRoomsCenter {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+}
+
+@media screen and (min-width: 776px) {
+  .featuredRoomsCenter {
+    width: 90vw;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
+}
+@media screen and (min-width: 992px) {
+  .featuredRoomsCenter {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+.featuredRooms {
+  padding: 5rem 0;
+}
+
+.filterContainer {
+  padding: 5rem 0;
+}
+.filterForm {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 40px;
+}
+.formGroup {
+  text-transform: capitalize;
+}
+.formGroup label {
+  display: block;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 0.5rem;
+}
+.formControl {
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+}
+.sizeInputs {
+  display: flex;
+}
+.sizeInput {
+  width: 40%;
+  padding: 0.2rem;
+  border: 1px solid var(--mainBlack);
+  border-radius: 0.3rem;
+  margin-right: 0.3rem;
+}
+.singleExtra label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+@media screen and (min-width: 776px) {
+  .filterForm {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .filterForm {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
+
+.singleRoom {
+  padding: 5rem 0 0 0;
+}
+.singleRoomImages {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+}
+.singleRoomImages img {
+  width: 100%;
+  display: block;
+  height: 200px;
+}
+.singleRoomInfo {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem auto;
+}
+.desc,
+.info {
+  margin: 1rem 0;
+}
+.desc h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.desc p {
+  line-height: 1.5;
+}
+.info h3,
+.info h6 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.info h6 {
+  font-weight: 300;
+}
+.room-extras {
+  width: 80vw;
+  margin: 0 auto 3rem auto;
+}
+.room-extras h6 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.extras {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .singleRoomImages,
+  .singleRoomInfo,
+  .room-extras {
+    width: 95vw;
+    max-width: 1170px;
+  }
+  .singleRoomInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+  .info {
+    padding-left: 3rem;
+  }
+}
+.image {
+  min-height: calc(50vh - 80px);
+  /* min-height: calc(70vh - 66px); */
+  margin-left: auto;
+  margin-right: auto;
+  background: center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(240, 228, 240);
+  width: 70%;
+margin-bottom: 2%;}

@@ -3,6 +3,7 @@ import styles from "../styles/Navbar.module.css";
 import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 import { LoginContext } from "../context/loginContext";
+import Link from "next/link";
 
 const Navbar = () => {
   const { loggedIn, logoutFunction } = useContext(LoginContext);
@@ -20,9 +21,9 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>Homepage</li>
+         <Link href={'/'}><li className={styles.listItem}>Homepage</li></Link> 
           <li className={styles.listItem}>Houses</li>
-          <li className={styles.listItem}>Hotels</li>
+         <Link href={'./hotels'}><li className={styles.listItem}>Hotels</li></Link> 
 
           <li className={styles.listItem}>Profile</li>
           <li className={styles.listItem}>Contact</li>

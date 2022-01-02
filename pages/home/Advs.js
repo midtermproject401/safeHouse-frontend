@@ -1,13 +1,39 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "../../styles/form.module.css";
+import axios from "axios";
 
 export default function Advs() {
   const { register, handleSubmit } = useForm();
-  function onSubmit(data) {
-    console.log(data);
-    console.log("hell0");
+  // function onSubmit(data) {
+  //   console.log(data);
+  //   console.log("hell0");
+  // }
+  async function onSubmit(values) {
+    let config = {
+      method: "post",
+      url: `https://safe---house.herokuapp.com/api/v1/house`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM",
+      },
+      data: values,
+    };
+
+    try {
+      const response = await axios(config);
+      console.log(response);
+      if (response.status == 200) {
+        reset();
+        toast(
+          "success",
+          "Thank you for contacting us, we will be in touch soon."
+        );
+      }
+    } catch (err) {}
   }
+
   return (
     <>
       <div className={styles.container}>
@@ -56,10 +82,10 @@ export default function Advs() {
             />
           </div>
           <div className={styles.input_box}>
-            <span>Accomdation Type</span>
+            <span>imge 3</span>
             <input
-              {...register("accomdationType", { required: true })}
-              placeholder="Accomdation Type"
+              {...register("img3", { required: true })}
+              placeholder="imge 3"
             />
           </div>
           <div className={styles.input_box}>

@@ -1,26 +1,13 @@
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 import { LoginContext } from "../context/loginContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-// import './styleForHome.css';
+import Link from "next/link";
 
 const Navbar = () => {
-  const { loggedIn, logoutFunction, user } = useContext(LoginContext);
-  const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
-  const [fullscreen, setFullscreen] = useState(true);
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-  // const chat = () => {
-  //   let api = `https://houses--safe.herokuapp.com/chat.html?username=${user.username}&Advname=house1`
-  //   window.open(api, "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")
-  // }
-  let api = `https://houses--safe.herokuapp.com/chat.html?username=${user.username}&Advname=house1`
-  
-  console.log(2222222222222222222222222222222, user.username);
+  const { loggedIn, logoutFunction } = useContext(LoginContext);
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -34,27 +21,20 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>Homepage</li>
-          <li className={styles.listItem}>Houses</li>
-          <li className={styles.listItem}>Hotels</li>
+          <Link href={"/"}>
+            <li className={styles.listItem}>Homepage</li>
+          </Link>
+          <Link href={"./home/houses"}>
+            <li className={styles.listItem}>Houses</li>
+          </Link>
+          <Link href={"./hotels"}>
+            <li className={styles.listItem}>Hotels</li>
+          </Link>
+          <Link href={"./home/fav"}>
+            <li className={styles.listItem}>Favourite</li>
+          </Link>
           <li className={styles.listItem}>Profile</li>
           <li className={styles.listItem}>Contact</li>
-          {/* button for chat */}
-          {/* <button className="btn btn-success" onClick={window.open('http://google.com','_blank')}> Google</button> */}
-          {/* <button onClick={chat} >chat</button> */}
-          <Button variant="primary" onClick={handleShow}>
-            Chat
-          </Button>
-          <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-            <Modal.Body>
-            <iframe src={api} border="no" scrolling="no"  width="100%" height="100%"></iframe>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={() => setShow(false)}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
           {loggedIn && (
             <>
               <a to="/">
@@ -72,14 +52,16 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={styles.item}>
-
+        {/* <div className={styles.cart}>
+          <Image src="/img/cart.png" alt="" width="30px" height="30px" />
+          <div className={styles.counter}>2</div>
+        </div> */}
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
 // import React, { useContext } from "react";
 // import { Navbar, Button, Alignment } from "@blueprintjs/core";
 // import styles from "../styles/nav.module.scss";

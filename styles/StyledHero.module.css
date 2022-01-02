@@ -1,0 +1,8 @@
+.hero {
+    min-height: 60vh;
+    /* background: url(${img1}); */
+    background: url('https://www.lux-review.com/wp-content/uploads/2019/09/turkish-hotel-1024x576.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

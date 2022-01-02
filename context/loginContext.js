@@ -6,7 +6,7 @@ import cookie from "react-cookies";
 export const LoginContext = React.createContext();
 
 export default function LoginProvider(props) {
-  const API = "https://houses--safe.herokuapp.com";
+  const API = "https://safe---house.herokuapp.com";
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
 

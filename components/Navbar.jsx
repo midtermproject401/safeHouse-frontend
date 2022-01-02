@@ -3,10 +3,7 @@ import styles from "../styles/Navbar.module.css";
 import React, { useContext, useState } from "react";
 // import { Link } from "react-router-dom";
 import { LoginContext } from "../context/loginContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-// import './styleForHome.css';
+import Link from "next/link";
 
 const Navbar = () => {
   const { loggedIn, logoutFunction, user } = useContext(LoginContext);
@@ -34,9 +31,14 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>Homepage</li>
+         <Link href={'/'}><li className={styles.listItem}>Homepage</li></Link> 
           <li className={styles.listItem}>Houses</li>
+<<<<<<< HEAD
           <li className={styles.listItem}>Hotels</li>
+=======
+         <Link href={'./hotels'}><li className={styles.listItem}>Hotels</li></Link> 
+
+>>>>>>> 86f2df20a618ac2f946614d8e60518caef6bb8b3
           <li className={styles.listItem}>Profile</li>
           <li className={styles.listItem}>Contact</li>
           {/* button for chat */}

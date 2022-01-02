@@ -9,7 +9,13 @@ import { getRooms } from "../../../../store/actions/action";
 import { useEffect } from "react";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://safe---house.herokuapp.com/hotel");
+  const res = await fetch("https://safe---house.herokuapp.com/hotel", {
+    headers: {
+      Accept: "application/json",
+
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM`,
+    },
+  });
   const data = await res.json();
   const paths = data.map((hotel) => {
     return {
@@ -25,7 +31,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(`https://safe---house.herokuapp.com/hotel/${id}/rooms`);
+  const res = await fetch(
+    `https://safe---house.herokuapp.com/hotel/${id}/rooms`
+  );
+
   const data = await res.json();
   const res2 = await fetch(`https://safe---house.herokuapp.com/hotel/${id}`);
   const data2 = await res2.json();
@@ -44,8 +53,6 @@ export default function Rooms({ rooms, hotel }) {
   const dispatch = useDispatch();
   const { activeHotel } = useSelector((state) => state.hotels);
 
- 
-
   return (
     <>
       <header className={styles.defaultHeroRoom} style={divImage}>
@@ -58,8 +65,8 @@ export default function Rooms({ rooms, hotel }) {
           </Link>
         </Banner>
       </header>
-      <RoomsFilter rooms={rooms}/>
-      <FilterRoom room={rooms}/>
+      <RoomsFilter rooms={rooms} />
+      <FilterRoom room={rooms} />
       {!activeHotel &&
         rooms.map((room) => {
           return (
@@ -72,7 +79,6 @@ export default function Rooms({ rooms, hotel }) {
             />
           );
         })}
-        
     </>
   );
 }

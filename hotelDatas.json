@@ -72,7 +72,6 @@
 
 // Rooms: for hotel 1: 
 {
-
     "accommodationType": "Double Deluxe",
     "price": "200$ per nigth",
     "Sleeps": "2",
@@ -81,7 +80,11 @@
     "img2":"https://cdn-cms2.hotelrunner.com/assets/photos/large/5b718313-a669-4fbd-b057-c02f9348dd13.jpg",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://img1.cgtrader.com/items/1983961/b4032d72de/large/modern-luxury-hotel-double-bed-room-design-3d-model-max.jpg",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments- Adequate safety/security- Internet- Comfortable beds",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"pet",
     "size": "500 SQFT",
 
 
@@ -94,7 +97,11 @@
     "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/55858755.jpg?k=42023e3241d479ed8c625f0268335ede1e88938869f1a176a8f90c914c66d3b1&o=&hp=1",
     "img3":"https://marti-myra-hotel.antalyacoast.com/data/Photos/520x280/6870/687098/687098688.JPEG",
     "heroImage":"https://www.lujohotel.com/assets/new-photos/accommodation/laguna-duplex-family-suite/laguna-duplex-family-suite-01.jpg",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments- Adequate safety/security- Internet- Comfortable beds",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"",
     "size": "700 SQFT",
 
 
@@ -106,7 +113,11 @@
     "img2":"https://static.onecms.io/wp-content/uploads/sites/28/2017/09/w-south-beach-hotel-miami-LUXBATH0817.jpg",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://assets.avanihotels.com/image/upload/q_auto,f_auto/media/minor/avani/images/central-melbourne/1117-x-670/one-bedroom-suite/avani-melbourne-central-residences-1-bedroom-suite-bedroom-1117x670px-hero.jpg",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"pet",
     "size": "200 SQFT",
 
 
@@ -118,7 +129,11 @@
     "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/319518983.jpg?k=a7120afd4b3a1854ec0ecbc65bf5e231b41ef2de27e4ce510472ccb87ced8122&o=",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/319521301.jpg?k=a3583d3b2d01f64cb0a53209432c67e44618f9fc6a1591bf8b671a186dbf6a92&o=&hp=1",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"",
     "size": "300 SQFT",
 
     "accommodationType": "double basic",
@@ -129,7 +144,11 @@
     "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/319518983.jpg?k=a7120afd4b3a1854ec0ecbc65bf5e231b41ef2de27e4ce510472ccb87ced8122&o=",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/319521301.jpg?k=a3583d3b2d01f64cb0a53209432c67e44618f9fc6a1591bf8b671a186dbf6a92&o=&hp=1",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"pet",
     "size": "350 SQFT",
 
 
@@ -141,7 +160,11 @@
     "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/319518983.jpg?k=a7120afd4b3a1854ec0ecbc65bf5e231b41ef2de27e4ce510472ccb87ced8122&o=",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/319521301.jpg?k=a3583d3b2d01f64cb0a53209432c67e44618f9fc6a1591bf8b671a186dbf6a92&o=&hp=1",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"pet",
     "size": "400 SQFT",
 
     "accommodationType": "family-basic",
@@ -152,7 +175,11 @@
     "img2":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/319518983.jpg?k=a7120afd4b3a1854ec0ecbc65bf5e231b41ef2de27e4ce510472ccb87ced8122&o=",
     "img3":"https://travelinspiredliving.com/wp-content/uploads/2019/11/Hotel-Kitchenette.jpg",
     "heroImage":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/319521301.jpg?k=a3583d3b2d01f64cb0a53209432c67e44618f9fc6a1591bf8b671a186dbf6a92&o=&hp=1",
-    "Extras": "- Plush pillows and breathable bed linens- Soft, oversized bath towels- Full-sized, pH-balanced toiletries- Complimentary refreshments",
+    "Extra1": " Plush pillows ",
+    "Extra2":"Internet-wifi",
+    "Extra3":"breakfast",
+    "Extra4":"Complimentary refreshments",
+    "Extra5":"pet",
     "size": "400 SQFT",
 
 

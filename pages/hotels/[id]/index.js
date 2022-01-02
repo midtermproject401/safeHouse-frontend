@@ -6,7 +6,24 @@ import cookie from "react-cookies";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get } from "../../../store/actions/action";
+import axios from "axios";
 
+// export function getServerSideProps({ req, res }) {
+//   console.log(req.cookies.token, "reeeeeeeeeeeeeeeeeeq");
+//   onsole.log(token, "tooooooooken");
+
+//   const res = await fetch("https://safe---house.herokuapp.com/hotel", {
+//     headers: {
+//       Accept: "application/json",
+
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
+
+//   const data = await res.json();
+//   console.log(data, "dataaaaaaaaaaaaa");
+//   return { props: { token: req.cookies.token || "" } };
+// }
 export const getStaticPaths = async () => {
   const myTokenCookie = cookie.load("token");
   console.log(myTokenCookie, "tooooooooken");
@@ -14,17 +31,18 @@ export const getStaticPaths = async () => {
   const res = await fetch("https://safe---house.herokuapp.com/hotel", {
     headers: {
       Accept: "application/json",
-      Authorization: `Bearer ${myTokenCookie}`,
+
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM`,
     },
   });
 
   const data = await res.json();
+  console.log(data, "dataaaaaaaaaaaaa");
   const paths = data.map((hotel) => {
     return {
       params: { id: hotel.id.toString() },
     };
   });
-
   return {
     paths,
     fallback: false,
@@ -47,7 +65,6 @@ export default function Hotel({ hotel }) {
     backgroundImage: "url(" + hotel.img + ")",
   };
 
- 
   return (
     <>
       <header className={styles.defaultHero} style={divImage}>

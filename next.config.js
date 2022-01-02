@@ -36,6 +36,7 @@ module.exports = {
       "ellalanguage.com",
       "encrypted-tbn0.gstatic.com",
       "www.shiversbathrooms.com",
+      "www.renderhub.com",
     ],
   },
 };

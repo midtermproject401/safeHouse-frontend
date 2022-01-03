@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FilterData from "./FilterData";
+import styles from "../../styles/House.page.module.css";
 import {
   addToCart,
   featchHouses,
@@ -31,21 +32,12 @@ const Houses = ({ houses }) => {
   function handleFav(house) {
     dispatch(addToCart(house));
   }
-  // const handelLocation = (e) => {
-  //   e.preventDefault();
-  //   let location = e.target.rigion.value;
-  //   console.log(location);
-  //   dispatch(filterRegion(location));
-  // };
+
   const handleChange = (e) => {
     e.preventDefault();
-    // let price = e.target.price.value;
-    // let location = e.target.rigion.value;
+
     console.log(e.target.value);
     dispatch(filterHouse(e.target.value));
-
-    // console.log(state.data.show, "state.data.show");
-    // dispatch(filterPrice(price));
   };
 
   useEffect(() => {
@@ -54,26 +46,35 @@ const Houses = ({ houses }) => {
   return (
     <>
       <h1>all houses</h1>
-      <form>
+      <form className={styles.form}>
         <label htmlFor="location">location</label>
-
-        <select name="rigion" onChange={handleChange}>
-          <option value="">Select the value</option>
-          <option value="amman">Amman</option>
-          <option value="irbid">irbid</option>
-          <option value="salt">salt</option>
-          <option value="zarqa">zarqa</option>
-        </select>
-
+        <div className={styles.box}>
+          <select
+            name="rigion"
+            onChange={handleChange}
+            className={styles.select}
+          >
+            <option value="">Select the value</option>
+            <option value="amman">Amman</option>
+            <option value="irbid">irbid</option>
+            <option value="salt">salt</option>
+            <option value="zarqa">zarqa</option>
+          </select>
+        </div>
         <label htmlFor="location">pricr range</label>
+        <div className={styles.box}>
+          <select
+            name="price"
+            onChange={handleChange}
+            className={styles.select}
+          >
+            <option value="">Select the value</option>
 
-        <select name="price" onChange={handleChange}>
-          <option value="">Select the value</option>
-
-          <option value="100">100-400</option>
-          <option value="400">400-700</option>
-          <option value="700">greter than 700</option>
-        </select>
+            <option value="100">100-400</option>
+            <option value="400">400-700</option>
+            <option value="700">greter than 700</option>
+          </select>
+        </div>
       </form>
       <div>
         {!state.data.show &&

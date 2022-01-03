@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { addToCart } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "../../styles/HotelCard.module.css";
+// import styles from "../../styles/hoteldetail.module.css";
+import styles from "../../styles/Homedetail.module.css";
+
 import Banner from "../../components/Hotels/Banner";
 import Link from "next/link";
+import { useState, useContext } from "react";
+import Head from "next/head";
 
 export const getStaticPaths = async () => {
   const res = await fetch("https://toto-do-7.herokuapp.com/homes/house");
@@ -42,6 +46,14 @@ export const getStaticProps = async (context) => {
   };
 };
 const Details = ({ house }) => {
+  const [tab, setTab] = useState(0);
+
+  const isActive = (index) => {
+    if (tab === index) return " active";
+    return "";
+  };
+  var images = [house.imgHero, house.img1, house.img2, house.img3];
+
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   function handleFav(house) {
@@ -54,18 +66,60 @@ const Details = ({ house }) => {
   };
   return (
     <>
-      <header className={styles.defaultHeroRoom} style={divImage}>
-        {/* <Banner
-          title={`OUR ROOMS`}
-          subtitle={`OUR ROOMS STARTS FROM ${house.price}`}
-        ></Banner> */}
-        <img src={house.imgHero} width={1000} height={500} />
-      </header>
-      <img src={house.img1} width={500} height={500} />
-      <img src={house.img2} width={500} height={500} />
-      <img src={house.img3} width={500} height={500} />
+      <div className="row detail_page">
+        <Head>
+          <title className={styles.title}>Detail Home</title>
+        </Head>
 
-      <h1>{house.location}</h1>
+        <div className="col-md-6">
+          <img
+            src={images[tab]}
+            alt={images[tab]}
+            className={styles.imgHeroo}
+            style={{
+              height: "500px",
+              width: "1000px",
+              // display: "flex",
+              // alignItems: "center",
+              // justifyContent: "center",
+            }}
+          />
+
+          <div className="row mx-0" style={{ cursor: "pointer" }}>
+            {images.map((img, index) => (
+              <img
+                className={styles.imgs}
+                key={index}
+                src={img}
+                alt={img}
+                className={`img-thumbnail rounded ${isActive(index)}`}
+                style={{ height: "100px", width: "100px" }}
+                onClick={() => setTab(index)}
+              />
+            ))}
+          </div>
+        </div>
+        <span className={styles.span}> Home Data</span>
+        <div className={styles.card_text}>
+          {" "}
+          <div className={styles.data}>{house.location}</div>
+          <div className={styles.data}>${house.price}</div>
+          <div className={styles.data}>{house.Description}</div>
+          <div className={styles.data}>{house.rentDuration}</div>
+          <div className={styles.data}>{house.ownerName}</div>
+          <div className={styles.data}>{house.phoneNumber}</div>
+          <div className={styles.data}>{house.state}</div>
+          <button
+            type="button"
+            onClick={() => {
+              handleFav(house);
+            }}
+          >
+            ❤️
+          </button>
+        </div>
+      </div>
+      {/* <h1>{house.location}</h1>
       <p>{house.Description}</p>
       <p>{house.accomdationType}</p>
       <p>{house.rentDuration}</p>
@@ -80,7 +134,7 @@ const Details = ({ house }) => {
       >
         add to fav
       </button>
-      <button>rent</button>
+      <button>rent</button> */}
     </>
   );
 };

@@ -89,7 +89,7 @@ export const fetchUsersSuccess = (houses) => {
     payload: houses,
   };
 };
-export const filterhouse = (houses) => {
+export const filterHouse = (houses) => {
   return {
     type: "FILTER_HOUSE",
     payload: houses,

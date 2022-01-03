@@ -33,6 +33,9 @@ const Navbar = () => {
           <Link href={"./home/fav"}>
             <li className={styles.listItem}>Favourite</li>
           </Link>
+          <Link href={"./home/Advs"}>
+            <li className={styles.listItem}>ADVS</li>
+          </Link>
           <li className={styles.listItem}>Profile</li>
           <li className={styles.listItem}>Contact</li>
           {loggedIn && (

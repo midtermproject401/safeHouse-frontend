@@ -6,7 +6,7 @@ import cookie from "react-cookies";
 export const LoginContext = React.createContext();
 
 export default function LoginProvider(props) {
-  const API = "https://houses--safe.herokuapp.com";
+  const API = "https://safe---house.herokuapp.com";
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
 
@@ -76,13 +76,14 @@ export default function LoginProvider(props) {
   };
   const state = {
     loggedIn: loggedIn,
-    user: user,
+    user: user, // user.username 
     loginFunction: loginFunction,
     logoutFunction: logoutFunction,
     can: can,
     signupFunction: signupFunction,
     capabilities: capabilities,
   };
+  // console.log(11111,user);  //-----______-----
   return (
     <LoginContext.Provider value={state}>
       {props.children}

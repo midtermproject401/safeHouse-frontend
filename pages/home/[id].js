@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { addToCart, deleteFromCart } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
-
+import { LoginContext } from "../../context/loginContext";
+import { useContext } from "react";
 export const getStaticPaths = async () => {
   const res = await fetch("https://toto-do-7.herokuapp.com/homes/house");
   const data = await res.json();
@@ -28,14 +29,22 @@ export const getStaticProps = async (context) => {
     props: { house: data },
   };
 };
-
 const Details = ({ house }) => {
+  const { loggedIn, logoutFunction, user } = useContext(LoginContext);
+
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   function handleFav(house) {
     dispatch(addToCart(house));
   }
-
+  const chatBtn =()=>{
+    let usernameValue = user.username
+    let advName = "HouseID:  " + house.id + "    " + "   OwnerName:" + "  " + house.ownerName
+    console.log(1111,advName);
+    let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=${advName}`
+    window.open(api)
+  }
+  // console.log(11111, user.username);
   return (
     <div>
       <Image src={house.imgHero} width={500} height={500} />
@@ -58,6 +67,7 @@ const Details = ({ house }) => {
         add to fav
       </button>
       <button>rent</button>
+      <button onClick={chatBtn} >Chat</button>
     </div>
   );
 };

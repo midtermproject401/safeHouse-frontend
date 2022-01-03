@@ -30,7 +30,7 @@ export default function SingleRoom() {
     <>
       {/* <Banner title={`HOTEL'S ROOM`}></Banner> */}
       <section className={styles.singleRoom}>
-        {rooms.map((room) => {
+        {rooms.map((room,index) => {
           if (room.id == active) {
             divImage = {
               backgroundImage: "url(" + room.heroImage + ")",
@@ -68,6 +68,23 @@ export default function SingleRoom() {
                         ? `${room.Sleeps} people`
                         : `${room.Sleeps}  person`}
                     </h6>
+                    <section className={styles.roomExtra}>
+                      <h6>Extras </h6>
+
+                      {/* <Calendar onChange={onChange} value={value} /> */}
+
+                      <ul className="extras">
+                        <li key={index}>{room.Extra1}</li>
+                        <li key={index}>{room.Extra2}</li>
+                        <li key={index}>{room.Extra3}</li>
+                        <li key={index}>{room.Extra4}</li>
+                        <li key={index}>{room.Extra5}</li>
+
+
+
+
+                      </ul>
+                    </section>
                     {/* <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
                     <h6>{breakfast && "free breakfast included"}</h6> */}
                   </article>
@@ -76,18 +93,6 @@ export default function SingleRoom() {
             );
           }
         })}
-      </section>
-      <section className="room-extras">
-        <h6>extras </h6>
-      
-
-        {/* <Calendar onChange={onChange} value={value} /> */}
-
-        {/* <ul className="extras">
-          {extras.map((item, index) => (
-            <li key={index}>- {item}</li>
-          ))}
-        </ul> */}
       </section>
     </>
   );

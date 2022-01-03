@@ -171,11 +171,11 @@
 .info h6 {
   font-weight: 300;
 }
-.room-extras {
+.roomExtra {
   width: 80vw;
   margin: 0 auto 3rem auto;
 }
-.room-extras h6 {
+.roomExtras h6 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
@@ -189,7 +189,7 @@
 @media screen and (min-width: 992px) {
   .singleRoomImages,
   .singleRoomInfo,
-  .room-extras {
+  .roomExtras {
     width: 95vw;
     max-width: 1170px;
   }

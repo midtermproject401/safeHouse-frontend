@@ -18,7 +18,8 @@ module.exports = {
       "https://www.furniturechoice.co.uk",
       "https://img1.cgtrader.com",
       "https://cf.bstatic.com",
-      "www.furniturechoice.co.uk"
+      "www.furniturechoice.co.uk",
+      "img1.cgtrader.com"
     ],
   },
 };

@@ -47,6 +47,7 @@ const Houses = ({ houses }) => {
     // console.log(state.data.show, "state.data.show");
     // dispatch(filterPrice(price));
   };
+
   useEffect(() => {
     dispatch(featchHouses());
   }, []);
@@ -74,33 +75,35 @@ const Houses = ({ houses }) => {
           <option value="700">greter than 700</option>
         </select>
       </form>
-      {!state.data.show &&
-        houses.map((house) => (
-          <>
-            <Link href={"/home/" + house.id} key={house.id}>
-              <a>
-                <Image
-                  alt={"img fav"}
-                  src={house.imgHero}
-                  width={500}
-                  height={500}
-                />
-              </a>
-            </Link>
-            <button
-              onClick={() => {
-                handleFav(house);
-              }}
-            >
-              add to fav
-            </button>
+      <div>
+        {!state.data.show &&
+          houses.map((house) => (
+            <>
+              <Link href={"/home/" + house.id} key={house.id}>
+                <a>
+                  <img
+                    alt={"img fav"}
+                    src={house.imgHero}
+                    width={500}
+                    height={500}
+                  />
+                </a>
+              </Link>
+              <button
+                onClick={() => {
+                  handleFav(house);
+                }}
+              >
+                add to fav
+              </button>
 
-            <button>rent</button>
-            <h3>{house.location}</h3>
-            <h3>{house.price}</h3>
-            <h3>{house.state}</h3>
-          </>
-        ))}
+              <button>rent</button>
+              <h3>{house.location}</h3>
+              <h3>{house.price}</h3>
+              <h3>{house.state}</h3>
+            </>
+          ))}
+      </div>
       {state.data.show && <FilterData />}
     </>
   );

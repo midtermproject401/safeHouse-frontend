@@ -37,6 +37,13 @@ module.exports = {
       "encrypted-tbn0.gstatic.com",
       "www.shiversbathrooms.com",
       "www.renderhub.com",
+      "cdn.mos.cms.futurecdn.net",
+      "res.cloudinary.com",
+      "www.villasud.com",
+      "roohome.com",
+      "www.safewise.com",
+      "hadaeeq.com",
+      "www.gimenezganga.com",
     ],
   },
 };

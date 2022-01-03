@@ -31,15 +31,28 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-<<<<<<< HEAD
           <li className={styles.listItem}>
             <a className={styles.listItem} href="/">
               Homepage
             </a>
           </li>
 
-          <li className={styles.listItem}>Houses</li>
-          <li className={styles.listItem}>Hotels</li>
+          <li className={styles.listItem}>
+            <a className={styles.listItem} href="./hotels">
+              Hotels
+            </a>
+          </li>
+
+          <li className={styles.listItem}>
+            <a className={styles.listItem} href="./home/houses">
+              Houses
+            </a>
+          </li>
+          <li className={styles.listItem}>
+            <a className={styles.listItem} href="./home/fav">
+              Favorite
+            </a>
+          </li>
 
           <li className={styles.listItem}>
             <a className={styles.listItem} href="/profile">
@@ -47,22 +60,6 @@ const Navbar = () => {
             </a>
           </li>
 
-=======
-          <Link href={"/"}>
-            <li className={styles.listItem}>Homepage</li>
-          </Link>
-          <Link href={"./home/houses"}>
-            <li className={styles.listItem}>Houses</li>
-          </Link>
-          <Link href={"./hotels"}>
-            <li className={styles.listItem}>Hotels</li>
-          </Link>
-          <Link href={"./home/fav"}>
-            <li className={styles.listItem}>Favourite</li>
-          </Link>
-          <li className={styles.listItem}>Profile</li>
->>>>>>> c729d8675d9ce68a518de2e4e07f6444b66efaa4
-          <li className={styles.listItem}>Contact</li>
           {loggedIn && (
             <>
               <li className={styles.logoutB} onClick={logoutFunction}>
@@ -85,46 +82,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-<<<<<<< HEAD
-=======
-// import React, { useContext } from "react";
-// import { Navbar, Button, Alignment } from "@blueprintjs/core";
-// import styles from "../styles/nav.module.scss";
-
-// import { Link } from "react-router-dom";
-// import { LoginContext } from "../context/loginContext";
-
-// function Navbare(props) {
-//   const { loggedIn, logoutFunction } = useContext(LoginContext);
-
-//   return (
-//     <>
-//       <Navbar className="bp3-navbar bp3-dark">
-//         <Navbar.Group>
-//           <Navbar.Heading>Safe House</Navbar.Heading>
-//         </Navbar.Group>
-//         <Navbar.Group align={Alignment.RIGHT}>
-//           <Navbar.Divider />
-//           <a to="/">
-//             <Button className="bp3-minimal" icon="home" text="Home" />
-//           </a>
-//           {loggedIn && (
-//             <>
-//               <a to="/">
-//                 <Button
-//                   className="bp3-minimal"
-//                   icon="log-out"
-//                   text="logout"
-//                   onClick={logoutFunction}
-//                 />
-//               </a>
-//             </>
-//           )}
-//         </Navbar.Group>
-//       </Navbar>
-//     </>
-//   );
-// }
-
-// export default Navbare;
->>>>>>> c729d8675d9ce68a518de2e4e07f6444b66efaa4

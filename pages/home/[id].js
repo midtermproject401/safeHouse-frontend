@@ -3,6 +3,8 @@ import { addToCart, deleteFromCart } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
 import { LoginContext } from "../../context/loginContext";
 import { useContext } from "react";
+import Iframe from 'react-iframe'
+
 export const getStaticPaths = async () => {
   const res = await fetch("https://toto-do-7.herokuapp.com/homes/house");
   const data = await res.json();
@@ -44,7 +46,68 @@ const Details = ({ house }) => {
     let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=${advName}`
     window.open(api)
   }
-  // console.log(11111, user.username);
+
+//   function MyVerticallyCenteredModal(props) {
+//     let usernameValue = "mohammd"
+//   let advName = "HouseID"
+ 
+//   let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=${advName}`
+ 
+//   return (
+//     <Modal
+//       {...props}
+//       size="lg"
+//       aria-labelledby="contained-modal-title-vcenter"
+//       centered
+//     >
+//       <Modal.Header closeButton>
+//         <Modal.Title id="contained-modal-title-vcenter">
+
+
+//   <Iframe url="https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=${advName}"
+//       width="450px"
+//       height="450px"
+//       id="myId"
+//       className="myClassname"
+//       display="initial"
+//       position="relative"/>
+
+//         </Modal.Title>
+//       </Modal.Header>
+//       <Modal.Body>       
+//       </Modal.Body>
+//       <Modal.Footer>
+//         <Button onClick={props.onHide}>Close</Button>
+//       </Modal.Footer>
+//     </Modal>
+//   );
+// }
+
+// function App() {
+//   const [modalShow, setModalShow] = React.useState(false);
+
+//   return (
+//     <>
+//       <Button   onClick={() => 
+//       setModalShow(true)
+//       }   >
+    
+//        Chat
+//       </Button>
+     
+
+//       <MyVerticallyCenteredModal
+//         show={modalShow}
+//         onHide={() => setModalShow(false)}
+//       />
+//     </>
+//   );
+// }
+
+// render(<App />);
+
+
+  
   return (
     <div>
       <Image src={house.imgHero} width={500} height={500} />
@@ -66,7 +129,7 @@ const Details = ({ house }) => {
       >
         add to fav
       </button>
-      <button>rent</button>
+      
       <button onClick={chatBtn}>Chat</button>
     </div>
   );

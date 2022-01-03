@@ -21,10 +21,18 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-         <Link href={'/'}><li className={styles.listItem}>Homepage</li></Link> 
-          <li className={styles.listItem}>Houses</li>
-         <Link href={'./hotels'}><li className={styles.listItem}>Hotels</li></Link> 
-
+          <Link href={"/"}>
+            <li className={styles.listItem}>Homepage</li>
+          </Link>
+          <Link href={"./home/houses"}>
+            <li className={styles.listItem}>Houses</li>
+          </Link>
+          <Link href={"./hotels"}>
+            <li className={styles.listItem}>Hotels</li>
+          </Link>
+          <Link href={"./home/fav"}>
+            <li className={styles.listItem}>Favourite</li>
+          </Link>
           <li className={styles.listItem}>Profile</li>
           <li className={styles.listItem}>Contact</li>
           {loggedIn && (
@@ -54,7 +62,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 // import React, { useContext } from "react";
 // import { Navbar, Button, Alignment } from "@blueprintjs/core";
 // import styles from "../styles/nav.module.scss";

@@ -76,13 +76,14 @@ export default function LoginProvider(props) {
   };
   const state = {
     loggedIn: loggedIn,
-    user: user,
+    user: user, // user.username 
     loginFunction: loginFunction,
     logoutFunction: logoutFunction,
     can: can,
     signupFunction: signupFunction,
     capabilities: capabilities,
   };
+  // console.log(11111,user);  //-----______-----
   return (
     <LoginContext.Provider value={state}>
       {props.children}

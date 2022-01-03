@@ -1,8 +1,9 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/Feature.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Container, Row, Col } from "reactstrap";
+
 const FeatureBox = (props) => {
   return (
     <>

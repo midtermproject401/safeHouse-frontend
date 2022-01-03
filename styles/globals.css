@@ -18,10 +18,12 @@ a {
 /* ----------- Profile ------------- */
 @import url("./profile.css");
 
-
 /* LAnding */
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
 }
+
+/* ----------- Footer2 ------------- */
+@import url("./Footer2.css");

@@ -1,7 +1,7 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Container, Row, Col } from "reactstrap";
+
 const Hero = () => {
   return (
     <section className="section position-relative">

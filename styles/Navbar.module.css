@@ -39,11 +39,14 @@
 .texts {
   margin-left: 20px;
   color: white;
+  text-decoration: none;
 }
 
 .text:first-child {
   font-size: 12px;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
 }
 
 .text:last-child {
@@ -62,11 +65,17 @@
 .listItem {
   margin: 20px;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
+  margin-top: 35px;
 }
 
 .logoutB {
   margin: 20px;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
+  margin-top: 35px;
 }
 .logoutB:hover {
   color: #e94a4a;

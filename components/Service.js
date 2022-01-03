@@ -1,31 +1,30 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Container, Row, Col } from "reactstrap";
 const Service = () => {
   const services = [
     {
-      title: "Lorem Ipsum",
+      title: "Buy",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      title: "Lorem Ipsum",
+      title: "Rent",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      title: "Lorem Ipsum",
+      title: "Sell",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      title: "Lorem Ipsum",
+      title: "Contact",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      title: "Lorem Ipsum",
+      title: "Confirm",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
     {
-      title: "Lorem Ipsum",
+      title: "Book",
       desc: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ];
@@ -40,9 +39,7 @@ const Service = () => {
                 <span className="text-warning">Services</span>
               </h3>
               <p className="text-muted">
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book
+                Safe House give you the chance to make anything in mind to 
               </p>
             </div>
           </Col>

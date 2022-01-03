@@ -1,13 +1,17 @@
 .container {
   height: 70px;
   padding: 0px 50px;
-  background-color: #00a6f3;
+  background-color: #394b59;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 999;
+}
+
+.newLogo {
+  border-radius: 50%;
 }
 
 .item {
@@ -60,6 +64,16 @@
   font-weight: 500;
 }
 
+.logoutB {
+  margin: 20px;
+  font-weight: 500;
+}
+.logoutB:hover {
+  color: #e94a4a;
+}
+.listItem:hover {
+  color: #8dc1db;
+}
 .cart {
   position: relative;
 }

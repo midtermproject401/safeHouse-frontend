@@ -1,6 +1,10 @@
+// import "bootstrap/dist/css/bootstrap.min.css";
+// lllll
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import LoginProvider from "../context/loginContext";
+// llllllllll
+import "../styles/header.css";
 import { Provider } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import store from "../store";

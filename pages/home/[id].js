@@ -67,7 +67,7 @@ const Details = ({ house }) => {
         add to fav
       </button>
       <button>rent</button>
-      <button onClick={chatBtn} >Chat</button>
+      <button onClick={chatBtn}>Chat</button>
     </div>
   );
 };

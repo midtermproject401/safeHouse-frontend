@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import FilterData from "./FilterData";
+// import React, {  } from "react";
+import { LoginContext } from "../../context/loginContext";
 import styles from "../../styles/House.page.module.css";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -11,6 +13,7 @@ import {
   filterRegion,
 } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
+
 import { useEffect } from "react";
 import {
   Flex,
@@ -34,11 +37,12 @@ const data = {
   rating: 4.2,
   numReviews: 34,
 };
+
 export const getStaticProps = async () => {
   const res = await fetch("https://safe---house.herokuapp.com/api/v1/house");
 
   const data = await res.json();
-  console.log(data);
+  console.log(5555555, data);
   return {
     props: { houses: data },
   };
@@ -62,6 +66,36 @@ const Houses = ({ houses }) => {
   useEffect(() => {
     dispatch(featchHouses());
   }, []);
+  // const chatBtn = (house) => {
+  //   let usernameValue = user.username
+  //   let userID =state.data
+  //   console.log(111111, userID);
+  // //  let c =  dispatch(house);
+  //   // console.log(55555, c);
+
+  //   var item = houses.filter(function(x){
+  //     return x.id === x.location;
+  //   })[0];
+
+  //   // let x = item.location
+  // //   // let adValue = houses. ;
+  // //   console.log(55555, item);
+  // //  let mapArr = houses.map(( item , key) =>{
+  // //     let adValue = item
+  // //     console.log(66666,adValue);
+  // //   })
+  // //   console.log(77777,mapArr);
+
+  //   // const result = inventory.find( ({ name }) => name === 'cherries' );
+  //   // const result = mapArr.find((item) => item === 'Amman')
+  //   // console.log(77777,result);
+
+  //   let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=emad`
+  //   window.open(api)
+  // }
+  // console.log(111111, user.username);
+  // console.log(222222 , `https://safe---house.herokuapp.com/api/v1/house`)
+  // console.log(3333);
   return (
     <>
       <ChakraProvider>
@@ -69,8 +103,8 @@ const Houses = ({ houses }) => {
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              // class="bk-icon -streamline-bed"
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -88,7 +122,6 @@ const Houses = ({ houses }) => {
               id={styles.ss}
               required
               placeholder="Location"
-              onChange={handleChange}
             >
               <option value="">Select the value</option>
               <option value="amman">Amman</option>
@@ -97,8 +130,7 @@ const Houses = ({ houses }) => {
               <option value="zarqa">zarqa</option>
             </select>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -125,15 +157,23 @@ const Houses = ({ houses }) => {
         </div>
 
         <div className={styles.card}>
-          {!state.data.show &&
-            houses.map((house) => {
-              return (
-                <>
-                  <Flex
-                    p={50}
-                    w="full"
-                    alignItems="center"
-                    justifyContent="center"
+          {houses.map((house) => {
+            return (
+              <>
+                <Flex
+                  p={50}
+                  w="full"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Box
+                    // bg={useColorModeValue("white", "gray.800")}
+                    maxW="sm"
+                    borderWidth="1px"
+                    rounded="lg"
+                    shadow="lg"
+                    position="relative"
+
                   >
                     <Box
                       bg={useColorModeValue("white", "gray.800")}
@@ -180,6 +220,7 @@ const Houses = ({ houses }) => {
                           justifyContent="space-between"
                           alignContent="center"
                         >
+
                           <Box
                             fontSize="2xl"
                             fontWeight="semibold"
@@ -188,6 +229,27 @@ const Houses = ({ houses }) => {
                             isTruncated
                           >
                             {house.location}
+
+                          <chakra.a href={"#"} display={"flex"}>
+                            {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
+                          </chakra.a>
+                        </Tooltip>
+                      </Flex>
+                      <Text fontSize={"sm"} color={"gray.500"}>
+                        {house.state}
+                      </Text>
+                      <Flex
+                        justifyContent="space-between"
+                        alignContent="center"
+                      >
+                        {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
+                        <Box
+                          fontSize="2xl"
+                          // color={useColorModeValue("gray.800", "white")}
+                        >
+                          <Box as="span" color={"gray.600"} fontSize="lg">
+                            $
+
                           </Box>
                           <Tooltip
                             label="Add to cart"

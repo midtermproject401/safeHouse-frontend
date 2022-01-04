@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { LoginContext } from "../context/loginContext";
 import React, { useContext, useState } from "react";
-
+import Link from "next/link";
 export default function Profile() {
   const { user } = useContext(LoginContext);
   const userName = user.username;
@@ -21,7 +21,6 @@ export default function Profile() {
       <Box
         maxW={"270px"}
         w={"full"}
-        bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
         rounded={"md"}
         overflow={"hidden"}
@@ -73,7 +72,8 @@ export default function Profile() {
           <Button
             w={"full"}
             mt={8}
-            bg={useColorModeValue("#151f21", "gray.900")}
+            bg={"gray"}
+            // bg={useColorModeValue("#151f21", "gray.900")}
             color={"white"}
             rounded={"md"}
             _hover={{
@@ -81,7 +81,9 @@ export default function Profile() {
               boxShadow: "lg",
             }}
           >
-            <a href="/">Homepage</a>
+            <Link href="/">
+              <a>Homepage</a>
+            </Link>
           </Button>
         </Box>
       </Box>

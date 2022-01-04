@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { addToCart } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
+import { LoginContext } from "../../context/loginContext";
 // import styles from "../../styles/hoteldetail.module.css";
 import styles from "../../styles/Homedetail.module.css";
 
@@ -38,6 +39,7 @@ export const getStaticProps = async (context) => {
   };
 };
 const Details = ({ house }) => {
+  const { loggedIn, logoutFunction, user } = useContext(LoginContext);
   const [tab, setTab] = useState(0);
 
   const isActive = (index) => {
@@ -52,6 +54,14 @@ const Details = ({ house }) => {
     dispatch(addToCart(house));
     console.log(house);
   }
+  const chatBtn = () => {
+    let usernameValue = user.username
+    let advName = "HouseID:  " + house.id + "    " + "   OwnerName:" + "  " + house.ownerName
+    console.log(1111, advName);
+    let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=${advName}`
+    window.open(api)
+  }
+  // console.log(11111, user.username);
   console.log(house);
   var divImage = {
     backgroundImage: "url(" + house.imgHero + ")",
@@ -84,7 +94,7 @@ const Details = ({ house }) => {
                 key={index}
                 src={img}
                 alt={img}
-                className={`img-thumbnail rounded ${isActive(index)}`}
+                // className={`img-thumbnail rounded ${isActive(index)}`}
                 style={{ height: "50px", width: "50px" }}
                 onClick={() => setTab(index)}
               />
@@ -110,6 +120,7 @@ const Details = ({ house }) => {
           >
             ❤️
           </button>
+      <button onClick={chatBtn}>Chat</button>
         </div>
       </div>
       {/* <h1>{house.location}</h1>
@@ -127,6 +138,9 @@ const Details = ({ house }) => {
       >
         add to fav
       </button>
+      <button>rent</button>
+      <button onClick={chatBtn}>Chat</button>
+    </div>
       <button>rent</button> */}
     </>
   );

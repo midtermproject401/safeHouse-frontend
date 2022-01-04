@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get } from "../../../store/actions/action";
 import axios from "axios";
+import Services from "../../../components/Hotels/Services";
 
 // export function getServerSideProps({ req, res }) {
 //   console.log(req.cookies.token, "reeeeeeeeeeeeeeeeeeq");
@@ -28,16 +29,9 @@ export const getStaticPaths = async () => {
   const myTokenCookie = cookie.load("token");
   console.log(myTokenCookie, "tooooooooken");
 
-  const res = await fetch("https://safe---house.herokuapp.com/hotel", {
-    headers: {
-      Accept: "application/json",
-
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM`,
-    },
-  });
+  const res = await fetch("https://safe---house.herokuapp.com/hotel");
 
   const data = await res.json();
-  console.log(data, "dataaaaaaaaaaaaa");
   const paths = data.map((hotel) => {
     return {
       params: { id: hotel.id.toString() },
@@ -58,9 +52,6 @@ export const getStaticProps = async (context) => {
   };
 };
 export default function Hotel({ hotel }) {
-  // const dispatch=useDispatch()
-  // const {hotels}=useSelector(state=>state.hotels)
-  console.log(hotel);
   var divImage = {
     backgroundImage: "url(" + hotel.img + ")",
   };
@@ -74,6 +65,7 @@ export default function Hotel({ hotel }) {
           </Link>
         </Banner>
       </header>
+      <Services />
 
       <FeaturedRooms id={hotel.id} />
     </>

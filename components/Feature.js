@@ -101,11 +101,11 @@ const Feature = () => {
       img: "https://thumbs.dreamstime.com/b/real-estate-agent-abstract-concept-vector-illustration-market-demonstrating-house-buying-new-appartment-realtor-commercial-198853654.jpg",
       title: "Post adds",
       desc: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      link: "/",
+      link: "./home/Advs",
     },
   ];
   return (
-    <section id={"section1"} className="section">
+    <section id={"Features"} className="section">
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

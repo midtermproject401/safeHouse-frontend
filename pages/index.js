@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 import React, { useContext } from "react";
 import Signin from "../components/signin";
+import Hero from "../components/Hero";
+import Feature from "../components/Feature";
+import Service from "../components/Service";
+import About from "../components/About";
+import SplitScreen from "../components/signin2";
 
-import Featured from "../components/Featured";
-import HomePageList from "../components/HomeList";
 import styles from "../styles/Home.module.css";
 import { LoginContext } from "../context/loginContext";
 
@@ -20,11 +22,14 @@ export default function Home() {
       </Head>
       {loggedIn ? (
         <>
-          <Featured />
-          <HomePageList />
+          <Hero />
+          <Feature />
+          <Service />
+          <About />
         </>
       ) : (
-        <Signin />
+        <SplitScreen />
+        // <Signin />
       )}
     </div>
   );

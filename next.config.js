@@ -19,6 +19,7 @@ module.exports = {
       "https://img1.cgtrader.com",
       "https://cf.bstatic.com",
       "www.furniturechoice.co.uk",
+      "img1.cgtrader.com",
       "www.thespruce.com",
       "www.thespruce.com",
       "www.online-tech-tips.com",

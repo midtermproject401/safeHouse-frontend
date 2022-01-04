@@ -1,25 +1,23 @@
 .imgHeroo {
-  margin-top: 5%;
+  position: relative;
+  margin-top: 2%;
+  margin-right: 300px;
   min-height: calc(80vh - 66px);
   background: center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.imgs {
-  margin-top: 5%;
-  min-height: calc(80vh - 66px);
-  background: center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .card_text {
+  position: absolute;
+  margin: 100px;
+  margin-left: 1000px;
   margin: 20px;
   padding: 40px;
   box-sizing: border-box;
@@ -79,4 +77,18 @@
 .form button:active,
 .form button:focus {
   background: #3f5870;
+}
+.img {
+  position: absolute;
+  margin-right: 300px;
+
+  margin-top: 50%;
+  min-height: calc(80vh - 66px);
+  display: flex;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
 }

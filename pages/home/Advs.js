@@ -1,16 +1,36 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import styles from "../../styles/form.module.css";
-
+import styles from "../../styles/Adv.module.css";
+import axios from "axios";
 export default function Advs() {
   const { register, handleSubmit } = useForm();
-  function onSubmit(data) {
-    console.log(data);
-    console.log("hell0");
+  // function onSubmit(data) {
+  //   console.log(data);
+  //   console.log("hell0");
+  // }
+  async function onSubmit(values) {
+    let config = {
+      method: "post",
+      url: `https://safe---house.herokuapp.com/api/v1/house`,
+      data: values,
+    };
+
+    try {
+      const response = await axios(config);
+      console.log(response);
+      if (response.status == 200) {
+        reset();
+        toast(
+          "success",
+          "Thank you for contacting us, we will be in touch soon."
+        );
+      }
+    } catch (err) {}
   }
+
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.form}>
         <div className={styles.title}>Add an AD</div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <div className={styles.input_box}>
@@ -18,6 +38,7 @@ export default function Advs() {
             <input
               {...register("location", { required: true })}
               placeholder="location"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -25,6 +46,7 @@ export default function Advs() {
             <input
               {...register("Description", { required: true })}
               placeholder="Description"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -32,6 +54,7 @@ export default function Advs() {
             <input
               {...register("imgHero", { required: true })}
               placeholder="Main imge"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -39,6 +62,7 @@ export default function Advs() {
             <input
               {...register("img1", { required: true })}
               placeholder="imge 1"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -46,6 +70,7 @@ export default function Advs() {
             <input
               {...register("img2", { required: true })}
               placeholder="imge 2"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -53,13 +78,15 @@ export default function Advs() {
             <input
               {...register("rentDuration", { required: true })}
               placeholder="Rent Duration"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
-            <span>Accomdation Type</span>
+            <span>imge 3</span>
             <input
-              {...register("accomdationType", { required: true })}
-              placeholder="Accomdation Type"
+              {...register("img3", { required: true })}
+              placeholder="imge 3"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -67,6 +94,7 @@ export default function Advs() {
             <input
               {...register("price", { required: true })}
               placeholder="price"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -74,6 +102,7 @@ export default function Advs() {
             <input
               {...register("state", { required: true })}
               placeholder="state"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -81,6 +110,7 @@ export default function Advs() {
             <input
               {...register("ownerName", { required: true })}
               placeholder="Your Name"
+              className={styles.input}
             />
           </div>
           <div className={styles.input_box}>
@@ -88,10 +118,15 @@ export default function Advs() {
             <input
               {...register("phoneNumber", { required: true })}
               placeholder="Phone Number"
+              className={styles.input}
             />
           </div>
-          <div className={styles.button}>
-            <input type="submit" value={"post an AD"} />
+          <div>
+            <input
+              type="submit"
+              className={styles.form_button}
+              value={"post an AD"}
+            />
           </div>
         </form>
       </div>

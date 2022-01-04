@@ -31,35 +31,23 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>
-            <a className={styles.listItem} href="/">
-              Homepage
-            </a>
-          </li>
-
-          <li className={styles.listItem}>
-            <a className={styles.listItem} href="./hotels">
-              Hotels
-            </a>
-          </li>
-
-          <li className={styles.listItem}>
-            <a className={styles.listItem} href="./home/houses">
-              Houses
-            </a>
-          </li>
-          <li className={styles.listItem}>
-            <a className={styles.listItem} href="./home/fav">
-              Favorite
-            </a>
-          </li>
-
-          <li className={styles.listItem}>
-            <a className={styles.listItem} href="/profile">
-              Profile{" "}
-            </a>
-          </li>
-
+          <Link href={"/"}>
+            <li className={styles.listItem}>Homepage</li>
+          </Link>
+          <Link href={"./home/houses"}>
+            <li className={styles.listItem}>Houses</li>
+          </Link>
+          <Link href={"./hotels"}>
+            <li className={styles.listItem}>Hotels</li>
+          </Link>
+          <Link href={"./home/fav"}>
+            <li className={styles.listItem}>Favourite</li>
+          </Link>
+          <Link href={"./home/Advs"}>
+            <li className={styles.listItem}>ADVS</li>
+          </Link>
+          <li className={styles.listItem}>Profile</li>
+          <li className={styles.listItem}>Contact</li>
           {loggedIn && (
             <>
               <li className={styles.logoutB} onClick={logoutFunction}>

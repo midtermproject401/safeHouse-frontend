@@ -137,7 +137,8 @@ export default function Hotels() {
       </div>
       <FilterHotel />
       {!activeHotel &&
-        hotels.map((hotel) => {
+        hotels.map((hotel,index) => {
+          console.log(index,"indexxxxxxxxxxxxxxx");
           return (
             <>
               <HotelCard

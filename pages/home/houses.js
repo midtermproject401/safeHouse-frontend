@@ -99,7 +99,7 @@ const Houses = ({ houses }) => {
   return (
     <>
       <ChakraProvider>
-        <h1>all houses</h1>
+        {/* <h1>all houses</h1> */}
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg
@@ -173,63 +173,60 @@ const Houses = ({ houses }) => {
                     rounded="lg"
                     shadow="lg"
                     position="relative"
-
                   >
-                    <Box
-                      bg={useColorModeValue("white", "gray.800")}
-                      maxW="sm"
-                      borderWidth="1px"
-                      rounded="lg"
-                      shadow="lg"
-                      position="relative"
-                    >
-                      <Circle
-                        size="10px"
-                        position="absolute"
-                        top={2}
-                        right={2}
-                        bg="red.200"
-                      />
-                      <Link href={"/home/" + house.id} key={house.id}>
-                        <a>
-                          <Image
-                            src={house.imgHero}
-                            alt={`Picture of ${data.name}`}
-                            roundedTop="lg"
-                            width={500}
-                            height={500}
-                          />
-                        </a>
-                      </Link>
+                    <Circle
+                      size="10px"
+                      position="absolute"
+                      top={2}
+                      right={2}
+                      bg="red.200"
+                    />
+                    <Link href={"/home/" + house.id} key={house.id}>
+                      <a>
+                        <Image
+                          src={house.imgHero}
+                          alt={`Picture of ${data.name}`}
+                          roundedTop="lg"
+                          width={500}
+                          height={500}
+                        />
+                      </a>
+                    </Link>
 
-                      <Box p="6">
-                        <Box d="flex" alignItems="baseline">
-                          {data.isNew && (
-                            <Badge
-                              rounded="full"
-                              px="2"
-                              fontSize="0.8em"
-                              colorScheme="red"
-                            >
-                              {house.state}
-                            </Badge>
-                          )}
-                        </Box>
-                        <Flex
-                          mt="1"
-                          justifyContent="space-between"
-                          alignContent="center"
-                        >
-
-                          <Box
-                            fontSize="2xl"
-                            fontWeight="semibold"
-                            as="h4"
-                            lineHeight="tight"
-                            isTruncated
+                    <Box p="6">
+                      <Box d="flex" alignItems="baseline">
+                        {data.isNew && (
+                          <Badge
+                            rounded="full"
+                            px="2"
+                            fontSize="0.8em"
+                            colorScheme="red"
                           >
-                            {house.location}
-
+                            Available
+                          </Badge>
+                        )}
+                      </Box>
+                      <Flex
+                        mt="1"
+                        justifyContent="space-between"
+                        alignContent="center"
+                      >
+                        <Box
+                          fontSize="2xl"
+                          fontWeight="semibold"
+                          as="h4"
+                          lineHeight="tight"
+                          isTruncated
+                        >
+                          {house.location}
+                        </Box>
+                        <Tooltip
+                          label="Add to cart"
+                          bg="white"
+                          placement={"top"}
+                          color={"gray.800"}
+                          fontSize={"1.2em"}
+                        >
                           <chakra.a href={"#"} display={"flex"}>
                             {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
                           </chakra.a>
@@ -249,54 +246,26 @@ const Houses = ({ houses }) => {
                         >
                           <Box as="span" color={"gray.600"} fontSize="lg">
                             $
-
                           </Box>
-                          <Tooltip
-                            label="Add to cart"
-                            bg="white"
-                            placement={"top"}
-                            color={"gray.800"}
-                            fontSize={"1.2em"}
-                          >
-                            <chakra.a href={"#"} display={"flex"}>
-                              {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
-                            </chakra.a>
-                          </Tooltip>
-                        </Flex>
-                        <Text fontSize={"sm"} color={"gray.500"}>
-                          {house.Description}
-                        </Text>
-                        <Flex
-                          justifyContent="space-between"
-                          alignContent="center"
-                        >
-                          {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-                          <Box
-                            fontSize="2xl"
-                            color={useColorModeValue("gray.800", "white")}
-                          >
-                            <Box as="span" color={"gray.600"} fontSize="lg">
-                              $
-                            </Box>
-                            {house.price}
+                          {house.price}
 
-                            <Text color={"gray.500"}>
-                              <button
-                                onClick={() => {
-                                  handleFav(house);
-                                }}
-                              >
-                                add to fav
-                              </button>
-                            </Text>
-                          </Box>
-                        </Flex>
-                      </Box>
+                          <Text color={"gray.500"}>
+                            <button
+                              onClick={() => {
+                                handleFav(house);
+                              }}
+                            >
+                              add to fav
+                            </button>
+                          </Text>
+                        </Box>
+                      </Flex>
                     </Box>
-                  </Flex>
-                </>
-              );
-            })}
+                  </Box>
+                </Flex>
+              </>
+            );
+          })}
         </div>
         {/* <div> */}
         {/* {!state.data.show &&

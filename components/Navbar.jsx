@@ -64,11 +64,11 @@ const Navbar = () => {
                   <a className={styles.listItem}>Houses</a>
                 </Link>
               </li> */}
-              <li className={styles.listItem}>
+              {/* <li className={styles.listItem}>
                 <Link href="/home/fav">
                   <a className={styles.listItem}>Favorite</a>
                 </Link>
-              </li>
+              </li> */}
 
               <li className={styles.listItem}>
                 <Link href="/profile">

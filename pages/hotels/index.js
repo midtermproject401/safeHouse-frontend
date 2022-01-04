@@ -16,6 +16,13 @@ export default function Hotels() {
   const [value, changeValue] = useState(new Date());
   const dispatch = useDispatch();
   const { hotels, activeHotel } = useSelector((state) => state.hotels);
+  const [liked, setLiked] = useState(false);
+
+  const handleNot = (id) => {
+    setLiked(true);
+
+    console.log(id);
+  };
 
   const handleCheckValue = (e) => {
     e.preventDefault();
@@ -142,7 +149,7 @@ export default function Hotels() {
       </div>
       <FilterHotel />
       {!activeHotel &&
-        hotels.map((hotel) => {
+        hotels.map((hotel, ind) => {
           return (
             <>
               <HotelCard
@@ -152,6 +159,7 @@ export default function Hotels() {
                 id={hotel.id}
                 ratingNum={hotel.Rating}
               />
+  
             </>
           );
         })}

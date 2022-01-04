@@ -53,6 +53,7 @@ export const displayRoom = (data) => {
 export const getRooms = (id) => (dispatch) => {
   return axios.get(`${url}/${id}/rooms`).then((res) => {
     dispatch(actualData(res.data, "GETROOMS"));
+    console.log(res.data,"ressssssssssssssssssssssssss")
   });
 };
 export const filter = (data) => {

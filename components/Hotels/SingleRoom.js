@@ -26,69 +26,110 @@ export default function SingleRoom() {
 
   var divImage;
 
+  const userLink = () => {
+    return (
+      <>
+        <Link href={`product/${product._id}`}>
+          <a className="btn btn-info" style={{ marginRight: "5px", flex: 1 }}>
+            View
+          </a>
+        </Link>
+        <button
+          className="btn btn-success"
+          style={{ marginLeft: "5px", flex: 1 }}
+          disabled={product.inStock === 0 ? true : false}
+          onClick={() => dispatch(addToCart(product, cart))}
+        >
+          Buy
+        </button>
+      </>
+    );
+  };
+
   return (
     <>
       {/* <Banner title={`HOTEL'S ROOM`}></Banner> */}
       <section className={styles.singleRoom}>
-        {rooms.map((room,index) => {
+        {rooms.map((room, index) => {
           if (room.id == active) {
             divImage = {
               backgroundImage: "url(" + room.heroImage + ")",
             };
             return (
               <>
-                <div className={styles.image}>
-                  <Image
+                <div className={styles.products}>
+                  {/* {
+                auth.user && auth.user.role === 'admin' &&
+                <input type="checkbox" checked={product.checked}
+                className="position-absolute"
+                style={{height: '20px', width: '20px'}}
+                onChange={() => handleCheck(product._id)} />
+            } */}
+                  <img
+                    className={styles.cardImgTop}
                     src={room.heroImage}
-                    height={200}
-                    width={700}
-                    // onClick={() => dipatcher(roomId)}
+                    alt={"product.images[0].url"}
+                    height={"350px"}
+                    marginRight="1.5rem!important"
                   />
+                  <img
+                    className={styles.cardImg1}
+                    src={room.img1}
+                    alt={"product.images[0].url"}
+                    height={"100px"}
+                    marginRight="1.5rem!important"
+                  />
+                  <img
+                    className={styles.cardImg2}
+                    src={room.img2}
+                    alt={"product.images[0].url"}
+                    height={"100px"}
+                    marginRight="1.5rem!important"
+                  />
+                  <img
+                    className={styles.cardImg3}
+                    src={room.img3}
+                    alt={"product.images[0].url"}
+                    height={"100px"}
+                    marginRight="1.5rem!important"
+                  />
+                  {/* <div className={styles.cardBody}> */}
+                  <h5>
+                    {room.accommodationType}
+                    <br></br>
+                  </h5>
+
+                  {/* <div className="row justify-content-between mx-0">
+                      <h6 className="text-danger">${product.price}</h6>
+                      {product.inStock > 0 ? (
+                        <h6 className="text-danger">
+                          In Stock: {product.inStock}
+                        </h6>
+                      ) : (
+                        <h6 className="text-danger">Out Stock</h6>
+                      )}
+                    </div> */}
+
+                  <p>
+                    {/* {room.Extra1} */}
+                    {room.price}
+                  </p>
+                  <nav>
+                  <li>{room.Extra1}</li>
+                  <li>{room.Extra2}</li>
+                  <li>{room.Extra3}</li>
+                  </nav>
+
+                  <img className={styles.book} src="https://image.freepik.com/free-vector/flat-hotel-booking-background_23-2148142886.jpg"></img>
+                  
+                  {/* 
+                    <div className="row justify-content-between mx-0">
+                      {!auth.user || auth.user.role !== "admin"
+                        ? userLink()
+                        : adminLink()}
+                    </div> */}
                 </div>
-
-                <div className={styles.singleRoomImages}>
-                  <img src={room.img1} alt={room.img2} />
-                  <img src={room.img2} alt={room.img2} />
-                  <img src={room.img3} alt={room.img2} />
-                </div>
-                <div className={styles.singleRoomInfo}>
-                  <article className={styles.desc}>
-                    <h3>Details</h3>
-                    <p>
-                      {room.accommodationType} <br></br> {room.Extras}
-                    </p>
-                  </article>
-                  <article className={styles.info}>
-                    <h3>info</h3>
-                    <h6>price : {room.price}</h6>
-                    <h6>size : {room.size}</h6>
-                    <h6>
-                      max capacity :
-                      {room.Sleeps > 1
-                        ? `${room.Sleeps} people`
-                        : `${room.Sleeps}  person`}
-                    </h6>
-                    <section className={styles.roomExtra}>
-                      <h6>Extras </h6>
-
-                      {/* <Calendar onChange={onChange} value={value} /> */}
-
-                      <ul className="extras">
-                        <li key={index}>{room.Extra1}</li>
-                        <li key={index}>{room.Extra2}</li>
-                        <li key={index}>{room.Extra3}</li>
-                        <li key={index}>{room.Extra4}</li>
-                        <li key={index}>{room.Extra5}</li>
-
-
-
-
-                      </ul>
-                    </section>
-                    {/* <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
-                    <h6>{breakfast && "free breakfast included"}</h6> */}
-                  </article>
-                </div>
+                {/* </div> */}
               </>
             );
           }

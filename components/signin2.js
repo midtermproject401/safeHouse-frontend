@@ -13,7 +13,7 @@ import {
 import React, { useContext, useState } from "react";
 import { LoginContext } from "../context/loginContext";
 import styles from "../styles/Signin.module.css";
-
+import Social from "./social";
 import { ChakraProvider } from "@chakra-ui/react";
 
 export default function SplitScreen() {
@@ -109,6 +109,7 @@ export default function SplitScreen() {
                           </a>
                         </Link>
                       </p>
+                      <Social />
                     </form>
                   </Stack>
                 </Flex>
@@ -162,6 +163,7 @@ export default function SplitScreen() {
                           </a>
                         </Link>
                       </p>
+                      <Social />
                     </form>
                   </Stack>
                 </Flex>

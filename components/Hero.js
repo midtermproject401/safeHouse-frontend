@@ -27,7 +27,7 @@ const Hero = () => {
                 and move forward.
               </p>
 
-              <Link href="./#section1">
+              <Link href="./#Features">
                 <a className="btn btn-warning">
                   Find Out How <span className="ml-2 right-icon">&#8594;</span>
                 </a>

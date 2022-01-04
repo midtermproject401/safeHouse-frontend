@@ -5,6 +5,7 @@ let intial = {
   rooms: [],
   filterdRooms: [],
   activeRoom: "",
+  filteredHotel:[]
 };
 
 // reducer function :
@@ -76,6 +77,26 @@ const hotelReducer = (state = intial, action) => {
         activeRoom: payload,
 
       };
+      case "FILTERHOTEL":
+        let filterdhotels;
+        console.log(payload);
+        const hotelData = state.hotels.map((hotel) => {
+          if (
+            hotel.Location == payload 
+          ) {
+            return (filterdhotels = hotel);
+          }
+          return hotel;
+        });
+        return {
+          ...state,
+          hotels: hotelData,
+          filteredHotel: [...state.filteredHotel, filterdhotels],
+          activeHotel: payload,
+          activeRoom: payload,
+  
+        };
+
     default:
       return state;
   }

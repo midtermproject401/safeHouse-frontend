@@ -17,6 +17,7 @@
     "@mui/material": "^5.2.6",
     "@react-google-maps/api": "^2.7.0",
     "@svgr/cli": "^6.1.2",
+    "@svgr/webpack": "^6.1.2",
     "axios": "^0.24.0",
     "base-64": "^1.0.0",
     "bootstrap": "^5.1.3",

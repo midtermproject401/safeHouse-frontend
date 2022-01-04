@@ -4,18 +4,11 @@ import cookie from "react-cookies";
 const url = "https://safe---house.herokuapp.com/hotel";
 
 export const get = () => async (dispatch) => {
-  const myTokenCookie = cookie.load("token");
-  console.log(myTokenCookie, "tooooooooken");
-  return axios
-    .get(url, {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${myTokenCookie}`,
-      },
-    })
-    .then((res) => {
-      dispatch(actualData(res.data, "GET"));
-    });
+  // const myTokenCookie = cookie.load("token");
+  // console.log(myTokenCookie, "tooooooooken");
+  return axios.get(url).then((res) => {
+    dispatch(actualData(res.data, "GET"));
+  });
   // const myTokenCookie = cookie.load("token");
   // console.log(myTokenCookie, "tooooooooken");
   // const res = await fetch("https://safe---house.herokuapp.com/hotel", {
@@ -65,6 +58,12 @@ export const getRooms = (id) => (dispatch) => {
 export const filter = (data) => {
   return {
     type: "FILTER",
+    payload: data,
+  };
+};
+export const filterHotels = (data) => {
+  return {
+    type: "FILTERHOTEL",
     payload: data,
   };
 };

@@ -12,6 +12,44 @@
   background: #af9a7d;
   margin: 1.7rem auto;
 }
+/* .roomLink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0);
+  transition: all 0.3s linear;
+} */
+.imgContainer:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.imgContainer:hover img {
+  opacity: 0.3;
+}
+.imgContainer:hover .price-top {
+  opacity: 0;
+}
+.imgContainer:hover .room-link {
+  transform: translate(-50%, -50%) scale(1);
+}
+.btnPrimary {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: #222;
+  background: #af9a7d;
+  padding: 0.4rem 0.9rem;
+  border: 3px solid #af9a7d;
+  transition: all 0.3s linear;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: absolute;
+  top: 43%;
+  left: 37%;
+}
+.btnPrimary:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
 
 .article {
   display: block;
@@ -213,4 +251,93 @@
   justify-content: center;
   background-color: rgb(240, 228, 240);
   width: 70%;
-margin-bottom: 2%;}
+  margin-bottom: 2%;
+}
+
+
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  justify-content: center;
+  margin: 20px 0;
+  /* background-color: yellow; */
+  height: 500px;
+  width: 1000;
+  position: relative;
+}
+/* .products .cardBody{
+  position: relative;
+  width: 100%;
+  height: 300px;
+} */
+.products nav{
+  position: absolute;
+  left: 50%;
+  top: 20%;}
+ .products h5{
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  font-size: 41px;
+  color: #2c84d1;
+
+}
+.products p{
+  position: absolute;
+  left: 78%;
+  top: 3%;
+  font-size: 20px;
+  color: #2b7ca2;
+}
+.products img{
+  margin: 10px auto;
+  
+  
+}
+
+.book{
+  position: absolute;
+  top: 15%;
+  left: 71%;
+  width: 400px
+}
+.products .cardImgTop{
+  height: 350px;
+  width: 500px;
+  position:absolute;
+  top: 5%;
+  left: 200px;
+}
+.products .cardImg1{
+  position:absolute;
+  top: 80%;
+  left: 200px;
+}
+.products .cardImg2{
+  position:absolute;
+  top: 80%;
+  left: 400px;
+}
+.products .cardImg3{
+  position:absolute;
+  top: 80%;
+  left: 600px;
+}
+.products .card-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.products .card-text{
+  height: 70px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+
+/* --------- Detail Product ----------- */
+.detail_page .img-thumbnail.active{
+  border-color: orangered;
+  padding: 2px;
+}

@@ -12,11 +12,6 @@ export default function Advs() {
     let config = {
       method: "post",
       url: `https://safe---house.herokuapp.com/api/v1/house`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM",
-      },
       data: values,
     };
 

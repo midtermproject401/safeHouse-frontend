@@ -30,27 +30,6 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-<<<<<<< HEAD
-          <Link href={"/"}>
-            <li className={styles.listItem}>Homepage</li>
-          </Link>
-          <Link href={"./home/houses"}>
-            <li className={styles.listItem}>Houses</li>
-          </Link>
-          <Link href={"./hotels"}>
-            <li className={styles.listItem}>Hotels</li>
-          </Link>
-          <Link href={"./home/fav"}>
-            <li className={styles.listItem}>Favourite</li>
-          </Link>
-          <Link href={"./home/Advs"}>
-            <li className={styles.listItem}>ADVS</li>
-          </Link>
-          <li className={styles.listItem}>Profile</li>
-          <li className={styles.listItem}>Contact</li>
-          {loggedIn && (
-            <>
-=======
           {loggedIn && (
             <>
               <li className={styles.listItem}>
@@ -85,7 +64,6 @@ const Navbar = () => {
                 <li className={styles.listItem}>ADVS</li>
               </Link>
 
->>>>>>> ebf0a3c6baa50cd30e6c4d8054f48de31475973d
               <li className={styles.logoutB} onClick={logoutFunction}>
                 <Link href="/">
                   <a className={styles.logoutB}>logout</a>

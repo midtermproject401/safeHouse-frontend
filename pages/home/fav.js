@@ -36,8 +36,8 @@ export default function Favaroite() {
 
   return (
     <>
-      <h1 className={styles.span}>cart</h1>
-      <span className={styles.span}>{state.cart.count}</span>
+      <h1 className={styles.spancart}>Favariote Houses</h1>
+      {/* <span className={styles.spancart}>{state.cart.count}</span> */}
       <div className={styles.card}>
         {state.cart.cartProducts.map((house) => {
           return (

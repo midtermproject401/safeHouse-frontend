@@ -87,14 +87,14 @@ const Feature = () => {
       img: "https://image.freepik.com/free-vector/family-moving-countryside-area-realtor-shows-townhouse-house-rent-booking-hose-online-best-rental-property-real-estate-services-concept-pinkish-coral-bluevector-isolated-illustration_335657-1959.jpg",
       title: "Rent a home",
       desc: "Find your place with an immersive photo experience and the most listings, including things you won’t find anywhere else.",
-      link: "/",
+      link: "./home/houses",
     },
     {
       id: 2,
       img: "https://thumbs.dreamstime.com/b/hotel-booking-searching-reservation-hand-holding-smartphone-concept-vector-illustration-flat-style-151052179.jpg",
       title: "Book a hotel Room",
       desc: "Sed perspiciatis unde omnis natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo excepturi sint occaecati cupiditate architecto.",
-      link: "/",
+      link: "./hotels",
     },
     {
       id: 3,
@@ -105,7 +105,7 @@ const Feature = () => {
     },
   ];
   return (
-    <section className="section" id="feature">
+    <section id={"section1"} className="section">
       <Container>
         <Row className="justify-content-center">
           <Col lg={6} md={8}>

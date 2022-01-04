@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import Feature from "../components/Feature";
 import Service from "../components/Service";
 import About from "../components/About";
+import SplitScreen from "../components/signin2";
 
 import styles from "../styles/Home.module.css";
 import { LoginContext } from "../context/loginContext";
@@ -27,7 +28,8 @@ export default function Home() {
           <About />
         </>
       ) : (
-        <Signin />
+        <SplitScreen />
+        // <Signin />
       )}
     </div>
   );

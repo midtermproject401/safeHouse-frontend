@@ -80,14 +80,14 @@ const Details = ({ house }) => {
             className={styles.imgHeroo}
             style={{
               height: "500px",
-              width: "1000px",
+              width: "800px",
               // display: "flex",
               // alignItems: "center",
               // justifyContent: "center",
             }}
           />
 
-          <div className="row mx-0" style={{ cursor: "pointer" }}>
+          <div className={styles.img} style={{ cursor: "pointer" }}>
             {images.map((img, index) => (
               <img
                 className={styles.imgs}
@@ -95,7 +95,7 @@ const Details = ({ house }) => {
                 src={img}
                 alt={img}
                 className={`img-thumbnail rounded ${isActive(index)}`}
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "50px", width: "50px" }}
                 onClick={() => setTab(index)}
               />
             ))}

@@ -12,8 +12,8 @@ const About = () => {
                 About <span className="text-warning">Us</span>
               </h3>
               <p className="text-muted">
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
+                Safe House Group is remaining real estate to make it easier to
+                unlock life’s next chapter.
               </p>
             </div>
           </Col>
@@ -21,7 +21,7 @@ const About = () => {
         <Row>
           <Col md={4}>
             <h2 className="font-weight-light line-height-1_6 text-dark mb-4">
-              Lorem Ipsum has been the industry's standard dummy text
+              When you’re ready for a change, we’re ready to help.
             </h2>
           </Col>
           <Col md={{ size: 7, offset: 1 }}>
@@ -31,8 +31,8 @@ const About = () => {
                   Our Mission
                 </h6>
                 <p className="text-muted font-weight-light">
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
+                  To create innovative technology solutions that will improve
+                  the lives of people around the globe
                 </p>
               </Col>
               <Col md={6}>
@@ -40,8 +40,8 @@ const About = () => {
                   Our Vision
                 </h6>
                 <p className="text-muted font-weight-light">
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
+                  Shape the future of the Internet by creating unprecedented
+                  value and opportunity for our customers
                 </p>
               </Col>
             </Row>

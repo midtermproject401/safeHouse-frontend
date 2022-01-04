@@ -159,11 +159,7 @@ export default function Hotels() {
                 id={hotel.id}
                 ratingNum={hotel.Rating}
               />
-              {liked ? (
-                <img src="/fillheart.svg"></img>
-              ) : (
-                <img src="/heart.svg" onClick={() => handleNot(1)}></img>
-              )}
+  
             </>
           );
         })}

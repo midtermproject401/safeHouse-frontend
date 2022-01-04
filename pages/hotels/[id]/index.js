@@ -55,6 +55,11 @@ export default function Hotel({ hotel }) {
   var divImage = {
     backgroundImage: "url(" + hotel.img + ")",
   };
+const dispatch=useDispatch()
+ 
+  useEffect(()=>{
+    dispatch(get())
+  },[])
 
   return (
     <>

@@ -16,7 +16,9 @@
 }
 .card_text {
   position: absolute;
-  margin: 100px;
+  top: 150px;
+  right: 100px;
+
   margin-left: 1000px;
   margin: 20px;
   padding: 40px;
@@ -45,7 +47,9 @@
 }
 .span {
   background: #fff8;
-
+  position: absolute;
+  right: 450px;
+  top: 150px;
   font-size: 30px;
 }
 .form_input {
@@ -80,10 +84,9 @@
 }
 .img {
   position: absolute;
-  margin-right: 300px;
-
-  margin-top: 50%;
   min-height: calc(80vh - 66px);
+  top: 350px;
+  left: 300px;
   display: flex;
   border-radius: 30px;
   align-items: center;
@@ -91,4 +94,8 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
+}
+.div {
+  position: relative;
+  height: 700px;
 }

@@ -98,26 +98,27 @@
   width: 70%;
   box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
   height: 90px;
-color: #333;
-border: 0;
-display: table;
-background-color: #e0dfdb;
-padding: 4px;
-border-radius: 4px;
-margin: 24px auto 16px auto;
-position: relative;
-/* width: 100%; */
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;}
+  color: #333;
+  border: 0;
+  display: table;
+  background-color: #e0dfdb;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 24px auto 16px auto;
+  position: relative;
+  /* width: 100%; */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-.accommodation form{
+.accommodation form {
   position: absolute;
   top: 10%;
   background-color: transparent;
 }
 
-.calender{
+.calender {
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -125,18 +126,18 @@ box-sizing: border-box;}
   color: black;
   /* background-color: tomato; */
 }
-.icon{
+.icon {
   vertical-align: middle;
   max-width: 256px;
   max-height: 256px;
   overflow: hidden;
 }
-.cardDev{
-  width:80%;
+.cardDev {
+  width: 80%;
   height: 300px;
   background-color: blanchedalmond;
 }
-.ratingStars{
+.ratingStars {
   position: absolute;
   top: 7%;
   left: 20%;

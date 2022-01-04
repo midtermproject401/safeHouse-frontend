@@ -68,7 +68,7 @@ const Details = ({ house }) => {
   };
   return (
     <>
-      <div className="row detail_page">
+      <div className={styles.div}>
         <Head>
           <title className={styles.title}>Detail Home</title>
         </Head>
@@ -86,7 +86,7 @@ const Details = ({ house }) => {
               // justifyContent: "center",
             }}
           />
-
+          {/* <div className={styles.div}> */}
           <div className={styles.img} style={{ cursor: "pointer" }}>
             {images.map((img, index) => (
               <img
@@ -101,6 +101,7 @@ const Details = ({ house }) => {
             ))}
           </div>
         </div>
+        {/* </div> */}
         <span className={styles.span}> Home Data</span>
         <div className={styles.card_text}>
           {" "}

@@ -149,3 +149,13 @@
   grid-template-columns: auto auto auto;
   grid-gap: 80px;
 }
+.hart {
+  position: relative;
+  left: 300px;
+  bottom: 30px;
+}
+.delete {
+  position: relative;
+  left: 300px;
+  bottom: 25px;
+}

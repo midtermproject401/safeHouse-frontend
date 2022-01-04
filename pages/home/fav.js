@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChakraProvider } from "@chakra-ui/react";
 import styles from "../../styles/House.page.module.css";
+// import {FontAwesomeIconfrom} "react-icons/fa";
+import { BsFillArchiveFill } from "react-icons/bs";
 
 import {
   Flex,
@@ -84,7 +86,7 @@ const Favaroite = () => {
                             fontSize="0.8em"
                             colorScheme="red"
                           >
-                            Available
+                            {house.state}
                           </Badge>
                         )}
                       </Box>
@@ -115,7 +117,7 @@ const Favaroite = () => {
                         </Tooltip>
                       </Flex>
                       <Text fontSize={"sm"} color={"gray.500"}>
-                        {house.state}
+                        {house.Description}
                       </Text>
                       <Flex
                         justifyContent="space-between"
@@ -137,7 +139,9 @@ const Favaroite = () => {
                                 handledelete(house);
                               }}
                             >
-                              delete
+                              <div className={styles.delete}>
+                                <BsFillArchiveFill />
+                              </div>
                             </button>
                           </Text>
                         </Box>

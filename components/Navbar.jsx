@@ -39,7 +39,7 @@ const Navbar = () => {
               </li>
 
               <li className={styles.listItem}>
-                <Link href="./hotels">
+                <Link href="/hotels">
                   <a className={styles.listItem}>Hotels</a>
                 </Link>
               </li>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { addToCart } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
 import { LoginContext } from "../../context/loginContext";
-import { useContext } from "react";
 // import styles from "../../styles/hoteldetail.module.css";
 import styles from "../../styles/Homedetail.module.css";
 
@@ -120,6 +119,7 @@ const Details = ({ house }) => {
           >
             ❤️
           </button>
+      <button onClick={chatBtn}>Chat</button>
         </div>
       </div>
       {/* <h1>{house.location}</h1>

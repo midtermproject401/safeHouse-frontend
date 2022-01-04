@@ -42,12 +42,11 @@ export const getStaticProps = async () => {
   const res = await fetch("https://safe---house.herokuapp.com/api/v1/house");
 
   const data = await res.json();
-  console.log(5555555,data);
+  console.log(5555555, data);
   return {
     props: { houses: data },
   };
 };
-
 
 const Houses = ({ houses }) => {
   const state = useSelector((state) => state);
@@ -74,10 +73,9 @@ const Houses = ({ houses }) => {
   // //  let c =  dispatch(house);
   //   // console.log(55555, c);
 
-  //   var item = houses.filter(function(x){ 
-  //     return x.id === x.location; 
+  //   var item = houses.filter(function(x){
+  //     return x.id === x.location;
   //   })[0];
-
 
   //   // let x = item.location
   // //   // let adValue = houses. ;
@@ -91,7 +89,7 @@ const Houses = ({ houses }) => {
   //   // const result = inventory.find( ({ name }) => name === 'cherries' );
   //   // const result = mapArr.find((item) => item === 'Amman')
   //   // console.log(77777,result);
-    
+
   //   let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=emad`
   //   window.open(api)
   // }
@@ -105,8 +103,8 @@ const Houses = ({ houses }) => {
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              // class="bk-icon -streamline-bed"
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -124,7 +122,6 @@ const Houses = ({ houses }) => {
               id={styles.ss}
               required
               placeholder="Location"
-              onChange={handleChange}
             >
               <option value="">Select the value</option>
               <option value="amman">Amman</option>
@@ -133,8 +130,7 @@ const Houses = ({ houses }) => {
               <option value="zarqa">zarqa</option>
             </select>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -171,7 +167,7 @@ const Houses = ({ houses }) => {
                   justifyContent="center"
                 >
                   <Box
-                    bg={useColorModeValue("white", "gray.800")}
+                    // bg={useColorModeValue("white", "gray.800")}
                     maxW="sm"
                     borderWidth="1px"
                     rounded="lg"
@@ -246,7 +242,7 @@ const Houses = ({ houses }) => {
                         {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
                         <Box
                           fontSize="2xl"
-                          color={useColorModeValue("gray.800", "white")}
+                          // color={useColorModeValue("gray.800", "white")}
                         >
                           <Box as="span" color={"gray.600"} fontSize="lg">
                             $

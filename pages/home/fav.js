@@ -27,12 +27,13 @@ const data = {
   numReviews: 34,
 };
 
-const Favaroite = () => {
+export default function Favaroite() {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   function handledelete(house) {
     dispatch(deleteFromCart(house));
   }
+
   return (
     <>
       <h1 className={styles.span}>cart</h1>
@@ -49,7 +50,7 @@ const Favaroite = () => {
                   justifyContent="center"
                 >
                   <Box
-                    bg={useColorModeValue("white", "gray.800")}
+                    // bg={useColorModeValue("white", "gray.800")}
                     maxW="sm"
                     borderWidth="1px"
                     rounded="lg"
@@ -124,7 +125,7 @@ const Favaroite = () => {
                         {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
                         <Box
                           fontSize="2xl"
-                          color={useColorModeValue("gray.800", "white")}
+                          // color={useColorModeValue("gray.800", "white")}
                         >
                           <Box as="span" color={"gray.600"} fontSize="lg">
                             $
@@ -153,6 +154,4 @@ const Favaroite = () => {
       ;
     </>
   );
-};
-
-export default Favaroite;
+}

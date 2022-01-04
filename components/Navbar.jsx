@@ -39,13 +39,17 @@ const Navbar = () => {
               </li>
 
               <li className="dropdown">
-                <a href="/home/houses">Houses</a>
+                <Link href="/home/houses">
+                  <a>Houses</a>
+                </Link>
 
                 <div className="dropdown-content">
-                  <a href="/home/houses">Houses</a>
-                  <a className="dropElement" href="/home/Advs">
-                    Creat Adds
-                  </a>
+                  <Link href="/home/houses">
+                    <a>Houses</a>
+                  </Link>
+                  <Link href="/home/Advs">
+                    <a className="dropElement">Creat Adds</a>
+                  </Link>
                 </div>
               </li>
 
@@ -55,10 +59,8 @@ const Navbar = () => {
                 </Link>
               </li>
 
-
-              <li className={styles.listItem}>
+              {/* <li className={styles.listItem}>
                 <Link href="/home/houses">
-
                   <a className={styles.listItem}>Houses</a>
                 </Link>
               </li> */}
@@ -73,7 +75,6 @@ const Navbar = () => {
                   <a className={styles.listItem}>Profile </a>
                 </Link>
               </li>
-
 
               <li className={styles.logoutB} onClick={logoutFunction}>
                 <Link href="/">

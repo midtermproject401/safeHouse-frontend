@@ -94,7 +94,7 @@ const Details = ({ house }) => {
                 key={index}
                 src={img}
                 alt={img}
-                className={`img-thumbnail rounded ${isActive(index)}`}
+                // className={`img-thumbnail rounded ${isActive(index)}`}
                 style={{ height: "50px", width: "50px" }}
                 onClick={() => setTab(index)}
               />

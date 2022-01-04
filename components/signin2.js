@@ -71,7 +71,7 @@ export default function SplitScreen() {
                           placeholder="password"
                         />
                       </FormControl>
-                      <label for="role">Choose a role:</label>
+                      <label htmlFor="role">Choose a role:</label>
                       <select
                         onClick={(e) => setRole(e.target.value)}
                         // style={{ width: "10rem", marginBottom: "14px" }}

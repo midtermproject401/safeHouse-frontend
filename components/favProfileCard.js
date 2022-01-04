@@ -81,7 +81,7 @@ function ProductAddToCart() {
           <>
             <Flex p={50} w="full" alignItems="center" justifyContent="center">
               <Box
-                bg={useColorModeValue("white", "gray.800")}
+                // bg={useColorModeValue("white", "gray.800")}
                 maxW="sm"
                 borderWidth="1px"
                 rounded="lg"
@@ -148,7 +148,8 @@ function ProductAddToCart() {
                     {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
                     <Box
                       fontSize="2xl"
-                      color={useColorModeValue("gray.800", "white")}
+
+                      // color={useColorModeValue("gray.800", "white")}
                     >
                       <Box as="span" color={"gray.600"} fontSize="lg">
                         $

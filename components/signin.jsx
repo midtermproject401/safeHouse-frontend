@@ -66,9 +66,10 @@ function Signin() {
                   name="role"
                   id="role"
                 >
-                  <option value="admin">Admin</option>
-                  <option value="teamLeader">Team Leader</option>
-                  <option value="agent">Agent</option>
+                  {/* <option value="admin">Admin</option> */}
+                  <option value=""></option>
+                  <option value="owner">Owner</option>
+                  <option value="client">Client</option>
                 </select>
                 <button>Signup</button>
                 <p className={styles.message}>

@@ -1,5 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 // lllll
+// import { ChakraProvider } from "@chakra-ui/react";
+
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import LoginProvider from "../context/loginContext";
@@ -13,9 +15,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <LoginProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        {/* <ChakraProvider> */}
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        {/* </ChakraProvider> */}
       </LoginProvider>
     </Provider>
   );

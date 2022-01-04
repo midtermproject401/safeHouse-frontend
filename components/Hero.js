@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Container, Row, Col } from "reactstrap";
 
@@ -25,9 +26,12 @@ const Hero = () => {
                 your perfect fit. Safe House making it simpler to sell your home
                 and move forward.
               </p>
-              <a href="#" className="btn btn-warning">
-                Find Out How <span className="ml-2 right-icon">&#8594;</span>
-              </a>
+
+              <Link href="./#section1">
+                <a className="btn btn-warning">
+                  Find Out How <span className="ml-2 right-icon">&#8594;</span>
+                </a>
+              </Link>
             </div>
           </Col>
           <Col lg={6}>

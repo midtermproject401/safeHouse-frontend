@@ -76,6 +76,7 @@
   text-decoration: none;
   color: white;
   margin-top: 35px;
+  margin-left: 200px;
 }
 .logoutB:hover {
   color: #e94a4a;
@@ -112,3 +113,5 @@
     flex: 3;
   }
 }
+
+

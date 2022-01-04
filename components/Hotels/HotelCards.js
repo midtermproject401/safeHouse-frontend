@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { getRooms, get } from "../../store/actions/action";
 import { useDispatch, useSelector } from "react-redux";
 
-const HotelCard = ({ image, name, description, id }) => {
+const HotelCard = ({ image, name, description, id ,ratingNum}) => {
   const dispatch = useDispatch();
   const [rating, ratingChanged] = useState(0);
 
@@ -16,21 +16,25 @@ const HotelCard = ({ image, name, description, id }) => {
   }, []);
 
   const { rooms,hotels } = useSelector((state) => state.hotels);
-  console.log(hotels, "roooms after fetching");
   return (
     <div className={styles.card}>
       <Image className={styles.image} src={image} height={200} width={300} />
       <Link href={`/hotels`}>
         <div className={styles.info}>
           <nav>
+            <span className={styles.span}>
+              <img src="/map.png" width={30} height={30}></img>
+            </span>
             <Link href={`/hotels/${id}/map`}>
-              <a>Show map</a>
+              
+              <a  className={styles.a}>Show map</a>
             </Link>
             <div className={styles.ratingStars}>
               {" "}
               <ReactStars
                 count={5}
-                onChange={ratingChanged}
+                value={ratingNum}
+                // onChange={ratingChanged}
                 size={24}
                 activeColor="#ffd700"
               />
@@ -41,8 +45,8 @@ const HotelCard = ({ image, name, description, id }) => {
           <Link href={`/hotels/${id}`} onClick={() => HandleDisplay(name)}>
             <a>
               {" "}
-              <button
-                style={{ background: "blue", padding: "1.5%", color: "white" }}
+              <button className={styles.search2}
+              
               >
                 see Availability
               </button>

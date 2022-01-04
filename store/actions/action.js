@@ -4,18 +4,11 @@ import cookie from "react-cookies";
 const url = "https://safe---house.herokuapp.com/hotel";
 
 export const get = () => async (dispatch) => {
-  const myTokenCookie = cookie.load("token");
-  console.log(myTokenCookie, "tooooooooken");
-  return axios
-    .get(url, {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${myTokenCookie}`,
-      },
-    })
-    .then((res) => {
-      dispatch(actualData(res.data, "GET"));
-    });
+  // const myTokenCookie = cookie.load("token");
+  // console.log(myTokenCookie, "tooooooooken");
+  return axios.get(url).then((res) => {
+    dispatch(actualData(res.data, "GET"));
+  });
   // const myTokenCookie = cookie.load("token");
   // console.log(myTokenCookie, "tooooooooken");
   // const res = await fetch("https://safe---house.herokuapp.com/hotel", {
@@ -68,6 +61,12 @@ export const filter = (data) => {
     payload: data,
   };
 };
+export const filterHotels = (data) => {
+  return {
+    type: "FILTERHOTEL",
+    payload: data,
+  };
+};
 
 /////////////////////////////////////////////////////////////////////////// home action
 export function addToCart(productName) {
@@ -89,7 +88,7 @@ export const fetchUsersSuccess = (houses) => {
     payload: houses,
   };
 };
-export const filterhouse = (houses) => {
+export const filterHouse = (houses) => {
   return {
     type: "FILTER_HOUSE",
     payload: houses,
@@ -99,14 +98,7 @@ export const filterhouse = (houses) => {
 export const featchHouses = () => {
   return (dispatch) => {
     axios
-      .get("https://safe---house.herokuapp.com/api/v1/house", {
-        headers: {
-          Accept: "application/json",
-
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM",
-        },
-      })
+      .get("https://safe---house.herokuapp.com/api/v1/house")
       .then((response) => {
         const houses = response.data;
         console.log(houses);

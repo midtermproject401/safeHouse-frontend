@@ -1,21 +1,21 @@
-import styles from "../../../../styles/HotelCard.module.css";
+// import styles from "../../../../styles/HotelCard.module.css";
+import styles from "../../../../styles/RoomCards.module.css";
+
 import Banner from "../../../../components/Hotels/Banner";
 import RoomCard from "../../../../components/Hotels/RoomCards ";
 import Link from "next/link";
 import RoomsFilter from "../../../../components/Hotels/RoomsFilterForm";
 import FilterRoom from "../../../../components/Hotels/FilterRooms";
+import Title from "../../../../components/Hotels/Title";
+import Services from "../../../../components/Hotels/Services";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getRooms } from "../../../../store/actions/action";
+import FeaturedRooms from "../../../../components/Hotels/FeaturedRooms";
 import { useEffect } from "react";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://safe---house.herokuapp.com/hotel", {
-    headers: {
-      Accept: "application/json",
-
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhbmluIiwiaWF0IjoxNjQxMTU0MDMzfQ.BdFiaDxPA1ez__S5u4gfV__rUbj6-Hp1S5bZL_FT9jM`,
-    },
-  });
+  const res = await fetch("https://safe---house.herokuapp.com/hotel");
   const data = await res.json();
   const paths = data.map((hotel) => {
     return {
@@ -47,11 +47,15 @@ export const getStaticProps = async (context) => {
 export default function Rooms({ rooms, hotel }) {
   console.log(rooms);
   var divImage = {
-    backgroundImage: "url(" + rooms[1].heroImage + ")",
+    backgroundImage: "url(" + rooms[2].heroImage + ")",
   };
 
   const dispatch = useDispatch();
   const { activeHotel } = useSelector((state) => state.hotels);
+  const dipatcher = (id) => {
+    console.log("dispatch", id);
+    dispatch(displayRoom(id));
+  };
 
   return (
     <>
@@ -67,18 +71,46 @@ export default function Rooms({ rooms, hotel }) {
       </header>
       <RoomsFilter rooms={rooms} />
       <FilterRoom room={rooms} />
-      {!activeHotel &&
-        rooms.map((room) => {
-          return (
-            <RoomCard
+      {
+        !activeHotel && (
+          <section className={styles.featuredRooms}>
+            {/* <Title title="featured rooms" /> */}
+            <div className={styles.featuredRoomsCenter}>
+              {rooms.map((room) => {
+                return (
+                  <article className={styles.room}>
+                    <div className={styles.imgContainer}>
+                      <img src={room.heroImage} alt="single room" />
+                      <div className={styles.priceTop}>
+                        <h6>{room.price}</h6>
+                      </div>
+                      <Link href={`/hotels/${room.hotelid}/rooms/${room.id}`}>
+                        <a
+                          className={styles.btnPrimary}
+                          onClick={() => dipatcher(room.id)}
+                        >
+                          {" "}
+                          show more
+                        </a>
+                      </Link>
+                    
+                    </div>
+                    <p className={styles.roomInfo}>{room.accommodationType}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )
+        /* 
+            // <RoomCard
               image={room.img2}
               name={room.accommodationType}
               description={room.price}
               id={room.hotelid}
               roomId={room.id}
-            />
-          );
-        })}
+            /> */
+      }
     </>
   );
 }

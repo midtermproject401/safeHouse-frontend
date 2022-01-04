@@ -1,13 +1,17 @@
 .container {
   height: 70px;
   padding: 0px 50px;
-  background-color: #00a6f3;
+  background-color: #394b59;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 999;
+}
+
+.newLogo {
+  border-radius: 50%;
 }
 
 .item {
@@ -35,11 +39,14 @@
 .texts {
   margin-left: 20px;
   color: white;
+  text-decoration: none;
 }
 
 .text:first-child {
   font-size: 12px;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
 }
 
 .text:last-child {
@@ -58,8 +65,25 @@
 .listItem {
   margin: 20px;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
+  margin-top: 35px;
 }
 
+.logoutB {
+  margin: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  margin-top: 35px;
+  margin-left: 200px;
+}
+.logoutB:hover {
+  color: #e94a4a;
+}
+.listItem:hover {
+  color: #8dc1db;
+}
 .cart {
   position: relative;
 }
@@ -89,3 +113,5 @@
     flex: 3;
   }
 }
+
+

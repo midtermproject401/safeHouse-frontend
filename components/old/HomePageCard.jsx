@@ -9,8 +9,8 @@ const HomePageCard = () => {
         <h1 className={styles.title}>Rent a home </h1>
 
         <p className={styles.desc}>
-          Find your place with an immersive photo experience and the most
-          listings, including things you won’t find anywhere else.
+          Find your place with an immersive photo experience , including things
+          you won’t find anywhere else.
         </p>
       </div>
       <div className={styles.container}>
@@ -18,8 +18,8 @@ const HomePageCard = () => {
         <h1 className={styles.title}>Book a hotel Room</h1>
 
         <p className={styles.desc}>
-          Find your place with an immersive photo experience and the most
-          listings, including things you won’t find anywhere else.
+          Find your place with an immersive photo experience, including things
+          you won’t find anywhere else.
         </p>
       </div>
       <div className={styles.container}>

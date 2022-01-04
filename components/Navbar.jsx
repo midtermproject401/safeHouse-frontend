@@ -27,7 +27,7 @@ const Navbar = () => {
           <Link href={"./home/houses"}>
             <li className={styles.listItem}>Houses</li>
           </Link>
-          <Link href={"./hotels"}>
+          <Link href={"/hotels"}>
             <li className={styles.listItem}>Hotels</li>
           </Link>
           <Link href={"./home/fav"}>

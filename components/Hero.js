@@ -22,12 +22,12 @@ const Hero = () => {
               <p className="text-muted mb-4 pb-2">
                 From search to sign, you can do everything online. Search over
                 all the listings, including apartments, houses, condos and
-                townhomes. With the most listings to choose from, you'll find
+                townhomes. With the most listings to choose from, you will find
                 your perfect fit. Safe House making it simpler to sell your home
                 and move forward.
               </p>
 
-              <Link href="./#section1">
+              <Link href="./#Features">
                 <a className="btn btn-warning">
                   Find Out How <span className="ml-2 right-icon">&#8594;</span>
                 </a>

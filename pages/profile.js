@@ -4,9 +4,9 @@ import React, { useContext } from "react";
 // import Card from "react-bootstrap/Card";
 import { LoginContext } from "../context/loginContext";
 import SplitScreen from "../components/signin2";
-import Profile from "../components/profile";
+import Profile from "../components/Profile";
 import ProductAddToCart from "../components/favProfileCard";
-export default function profile() {
+export default function Profile2() {
   const { user } = useContext(LoginContext);
   const userName = user.username;
 

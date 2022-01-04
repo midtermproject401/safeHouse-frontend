@@ -40,7 +40,7 @@ export default function Hotels() {
       <div className={styles.accommodation}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <svg
-            class="bk-icon -streamline-bed"
+            // class="bk-icon -streamline-bed"
             // class={styles.check}
             height="24"
             width="24"
@@ -70,7 +70,7 @@ export default function Hotels() {
           <svg
             aria-hidden="true"
             // class="bk-icon -experiments-calendar sb-date-picker_icon-svg"
-            class={styles.check}
+            className={styles.check}
             fill="#BDBDBD"
             focusable="false"
             height="20"
@@ -80,7 +80,7 @@ export default function Hotels() {
           >
             <path
               d="m112 16h-16v-8h-8v8h-48v-8h-8v8h-16c-4.4 0-8 3.9-8 8.7v86.6c0 4.8 3.6 8.7 8 8.7h96c4.4 0 8-3.9 8-8.7v-86.6c0-4.8-3.6-8.7-8-8.7zm0 95.3a1.1 1.1 0 0 1 -.2.7h-95.6a1.1 1.1 0 0 1 -.2-.7v-71.3h96zm-68-43.3h-12v-12h12zm0 28h-12v-12h12zm26-28h-12v-12h12zm0 28h-12v-12h12zm26 0h-12v-12h12zm0-28h-12v-12h12z"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             ></path>
           </svg>
           <input
@@ -94,7 +94,7 @@ export default function Hotels() {
           />
           <svg
             aria-hidden="true"
-            class={styles.search}
+            className={styles.search}
             fill="#333333"
             focusable="false"
             height="20"
@@ -122,18 +122,23 @@ export default function Hotels() {
         </div>
       )}
       <div className={styles.dev1}>
-      <div className={styles.cont}>
-        <div className={styles.contDev}></div>
-        <div className={styles.contDev1}></div>
-        <div className={styles.contDev2}></div>
+        <div className={styles.cont}>
+          <div className={styles.contDev}></div>
+          <div className={styles.contDev1}></div>
+          <div className={styles.contDev2}></div>
 
-        <div className={styles.devContainer}>
-          <span className= {styles.sp}>Find Your <br></br> <br></br> Hotel</span>
+          <div className={styles.devContainer}>
+            <span className={styles.sp}>
+              Find Your <br></br> <br></br> Hotel
+            </span>
+          </div>
         </div>
       </div>
-      </div>
       <div className={styles.devImg}>
-        <img src="https://www.savepng.com/file/thumb/2020-06/33386-8-hotel-clipart-thumb.png" width={100}></img>
+        <img
+          src="https://www.savepng.com/file/thumb/2020-06/33386-8-hotel-clipart-thumb.png"
+          width={100}
+        ></img>
       </div>
       <FilterHotel />
       {!activeHotel &&

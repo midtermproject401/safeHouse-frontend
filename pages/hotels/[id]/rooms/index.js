@@ -76,9 +76,9 @@ export default function Rooms({ rooms, hotel }) {
           <section className={styles.featuredRooms}>
             {/* <Title title="featured rooms" /> */}
             <div className={styles.featuredRoomsCenter}>
-              {rooms.map((room) => {
+              {rooms.map((room, idx) => {
                 return (
-                  <article className={styles.room}>
+                  <article key={idx} className={styles.room}>
                     <div className={styles.imgContainer}>
                       <img src={room.heroImage} alt="single room" />
                       <div className={styles.priceTop}>
@@ -93,7 +93,6 @@ export default function Rooms({ rooms, hotel }) {
                           show more
                         </a>
                       </Link>
-                    
                     </div>
                     <p className={styles.roomInfo}>{room.accommodationType}</p>
                   </article>

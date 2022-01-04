@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "../../styles/Adv.module.css";
 import axios from "axios";
+import { RiAdvertisementFill } from "react-icons/ri";
+
 export default function Advs() {
   const { register, handleSubmit } = useForm();
   // function onSubmit(data) {
@@ -31,7 +33,9 @@ export default function Advs() {
   return (
     <>
       <div className={styles.form}>
-        <div className={styles.title}>Add an AD</div>
+        <div className={styles.title}>
+          Post your Advertisment <RiAdvertisementFill />
+        </div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <div className={styles.input_box}>
             <span>location</span>

@@ -54,7 +54,7 @@ const RoomsFilter = ({rooms}) => {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="capacity">Guests</label>
+          <label htmlFor="capacity">Price</label>
           <select
             name="price"
             id="price"

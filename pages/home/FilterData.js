@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChakraProvider } from "@chakra-ui/react";
 import styles from "../../styles/House.page.module.css";
+import { useState } from "react";
 
 
 import swal from "sweetalert";

@@ -6,6 +6,14 @@ import { LoginContext } from "../../context/loginContext";
 import styles from "../../styles/Homedetail.module.css";
 import swal from "sweetalert";
 import { BsFillChatQuoteFill } from "react-icons/bs";
+import {  FcHome,FcPhone } from "react-icons/fc";
+import {   CgProfile,} from "react-icons/cg";
+import {   SiHomeadvisor} from "react-icons/si";
+import {   MdDescription,MdPriceCheck,MdOutlineShareLocation,MdEventAvailable} from "react-icons/md";
+
+
+
+
 
 import Banner from "../../components/Hotels/Banner";
 import Link from "next/link";
@@ -79,7 +87,8 @@ const Details = ({ house }) => {
     <>
       <div className={styles.div}>
         <Head>
-          <title className={styles.title}>Detail Home</title>
+         
+          <title className={styles.title}> Detail Home</title>
         </Head>
 
         <div className={styles.imgHeroo}>
@@ -110,31 +119,31 @@ const Details = ({ house }) => {
         {/* </div> */}
         <div className={styles.card_text}>
           {" "}
-          <span className={styles.spanTitle}> Home Data</span>
+          <span className={styles.spanTitle}>  <FcHome className={styles.icon}/> Home Data</span>
           <div className={styles.data}>
-            <span>location : </span>
+            <span> <MdOutlineShareLocation/> location : </span>
             {house.location}
           </div>
           <div className={styles.data}>
-            <span>price : </span>${house.price}
+            <span> <MdPriceCheck/> price : </span>${house.price}
           </div>
           <div className={styles.data}>
-            <span>Description : </span>
+            <span> <MdDescription/> Description : </span>
             {house.Description}
           </div>
           <div className={styles.data}>
-            <span>Rent Duration : </span>
+            <span><SiHomeadvisor/> Rent Duration : </span>
             {house.rentDuration}
           </div>
           <div className={styles.data}>
-            <span>Owner Name : </span>
+            <span> <CgProfile/> Owner Name : </span>
             {house.ownerName}
           </div>
           <div className={styles.data}>
-            <span>phone Number : </span>
+            <span> <FcPhone/> phone Number : </span>
             {house.phoneNumber}
           </div>
-          <div className={styles.data}>{house.state}</div>
+          <div className={styles.data}> <MdEventAvailable/> {house.state}</div>
           <button
             onClick={() => {
               handleFav(house);

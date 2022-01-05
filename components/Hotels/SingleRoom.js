@@ -9,6 +9,12 @@ import styles from "../../styles/RoomCards.module.css";
 import { filterHotels, getRooms } from "../../store/actions/action";
 import Head from "next/head";
 import ModelBooking from "./Model";
+import {  FcPhone ,FcRating} from "react-icons/fc";
+import {  FaHotel } from "react-icons/fa";
+
+import {   CgProfile,} from "react-icons/cg";
+import {   SiHomeadvisor} from "react-icons/si";
+import {   MdDescription,MdPriceCheck,MdOutlineShareLocation,MdEventAvailable,MdHotel} from "react-icons/md";
 
 
 export default function SingleRoom() {
@@ -52,7 +58,7 @@ export default function SingleRoom() {
             <>
               <div key={index} className={styles.div}>
                 <Head>
-                  <title className={styles.title}>Detail Home</title>
+                  <title className={styles.title}> Detail Room</title>
                 </Head>
                 <div className={styles.imgHeroo}>
                   <img
@@ -60,8 +66,8 @@ export default function SingleRoom() {
                     alt={images[tab]}
                     className={styles.imgHeroo}
                     style={{
-                      height: "300px",
-                      width: "600px",
+                      height: "500px",
+                      width: "800px",
                     }}
                   />
                   <div className={styles.img} style={{ cursor: "pointer" }}>
@@ -80,34 +86,42 @@ export default function SingleRoom() {
 
                 <div className={styles.card_text}>
                   {" "}
-                  <span className={styles.spanTitle}> Room Data</span>
+                  <span className={styles.spanTitle}>  <FaHotel/> Room Data</span>
                   {/* <div className={styles.data}>
             <span>location : </span>
             {room.location}
           </div> */}
                   <div className={styles.data}>
-                    <span>price : </span>
+                    <span> <MdPriceCheck/> price : </span>
                     {room.price}
                   </div>
                   {/* <div className={styles.data}>
                     <span>facilities </span>
                     <img src={hotelsFilter[0].img}></img>{" "}
                   </div> */}
+                  <div className={styles.data}>
+                        <span> <MdHotel/> Extra </span>
+                        {room.Extra1}
+                      </div>
+                      <div className={styles.data}>
+                        <span> <MdDescription/> Facilites </span>
+                        {room.Extra3}
+                      </div>
                   {hotelsFilter.length > 0 && (
                     <>
                       <div className={styles.data}>
-                        <span>Hotel Name : {hotelsFilter[0].hotelName} </span>
-                        {room.Extra1}
-                      </div>
-                      <div className={styles.data}>
-                        <span>Location : {hotelsFilter[0].Location}</span>
+                        <span> <MdHotel/> Hotel Name : {hotelsFilter[0].hotelName} </span>
                         {room.Extra2}
                       </div>
                       <div className={styles.data}>
-                        <span>Rating :{hotelsFilter[0].Rating} </span>
+                        <span> <MdOutlineShareLocation/> Location : {hotelsFilter[0].Location}</span>
+                        {room.Extra2}
+                      </div>
+                      <div className={styles.data}>
+                        <span> <FcRating/> Rating :{hotelsFilter[0].Rating} </span>
                         {room.Extra1}
                       </div>
-                      <div className={styles.data}>Available</div>
+                      <div className={styles.data}> <MdEventAvailable/>Available</div>
                     </>
                   )}
                 </div>

@@ -149,6 +149,7 @@
   grid-template-columns: auto auto auto;
   grid-gap: 80px;
 }
+ 
 .svg {
   position: relative;
   left: 250px;
@@ -177,4 +178,13 @@
   margin: 20px;
   color: #3a3535;
   text-align: left;
+.hart {
+  position: relative;
+  left: 300px;
+  bottom: 30px;
+}
+.delete {
+  position: relative;
+  left: 300px;
+  bottom: 25px;
 }

@@ -6,135 +6,117 @@ import Link from "next/link";
 import Image from "next/image";
 import Banner from "./Banner";
 import styles from "../../styles/RoomCards.module.css";
-import { getRooms } from "../../store/actions/action";
+import { filterHotels, getRooms } from "../../store/actions/action";
+import Head from "next/head";
+import ModelBooking from "./Model";
+
 
 export default function SingleRoom() {
   const dispatch = useDispatch();
 
   const [value, onChange] = useState(new Date());
-  const [active, setActive] = useState("");
+  const [hotelid, setHotel] = useState(0);
 
-  const { rooms, activeRoom, filterdRooms } = useSelector(
-    (state) => state.hotels
-  );
-  console.log(rooms, activeRoom);
+  const { rooms, activeRoom, hotels } = useSelector((state) => state.hotels);
 
+  const hotelFilter = rooms.filter((hotel) => {
+    return hotel.id == activeRoom;
+  });
+  const hotelsFilter = hotels.filter((hotel) => {
+    console.log(hotel);
+    return Number(hotel.id) == hotelid;
+  });
+
+  console.log(hotelsFilter, hotelid);
   useEffect(() => {
-    dispatch(getRooms(rooms.hotelid));
-    setActive(activeRoom);
+    setHotel(hotelFilter[0].hotelid);
   }, []);
 
   var divImage;
+  const [tab, setTab] = useState(0);
 
-  const userLink = () => {
-    return (
-      <>
-        <Link href={`product/${product._id}`}>
-          <a className="btn btn-info" style={{ marginRight: "5px", flex: 1 }}>
-            View
-          </a>
-        </Link>
-        <button
-          className="btn btn-success"
-          style={{ marginLeft: "5px", flex: 1 }}
-          disabled={product.inStock === 0 ? true : false}
-          onClick={() => dispatch(addToCart(product, cart))}
-        >
-          Buy
-        </button>
-      </>
-    );
+  const isActive = (index) => {
+    if (tab === index) return " active";
+    return "";
   };
-
   return (
     <>
-      {/* <Banner title={`HOTEL'S ROOM`}></Banner> */}
-      <section className={styles.singleRoom}>
-        {rooms.map((room, index) => {
-          if (room.id == active) {
-            divImage = {
-              backgroundImage: "url(" + room.heroImage + ")",
-            };
-            return (
-              <>
-                <div className={styles.products}>
-                  {/* {
-                auth.user && auth.user.role === 'admin' &&
-                <input type="checkbox" checked={product.checked}
-                className="position-absolute"
-                style={{height: '20px', width: '20px'}}
-                onChange={() => handleCheck(product._id)} />
-            } */}
-                  <img
-                    className={styles.cardImgTop}
-                    src={room.heroImage}
-                    alt={"product.images[0].url"}
-                    height={"350px"}
-                    marginRight="1.5rem!important"
-                  />
-                  <img
-                    className={styles.cardImg1}
-                    src={room.img1}
-                    alt={"product.images[0].url"}
-                    height={"100px"}
-                    marginRight="1.5rem!important"
-                  />
-                  <img
-                    className={styles.cardImg2}
-                    src={room.img2}
-                    alt={"product.images[0].url"}
-                    height={"100px"}
-                    marginRight="1.5rem!important"
-                  />
-                  <img
-                    className={styles.cardImg3}
-                    src={room.img3}
-                    alt={"product.images[0].url"}
-                    height={"100px"}
-                    marginRight="1.5rem!important"
-                  />
-                  {/* <div className={styles.cardBody}> */}
-                  <h5>
-                    {room.accommodationType}
-                    <br></br>
-                  </h5>
+      {rooms.map((room, index) => {
+        if (room.id == activeRoom) {
+          divImage = {
+            backgroundImage: "url(" + room.heroImage + ")",
+          };
+          var images = [room.heroImage, room.img1, room.img2, room.img3];
 
-                  {/* <div className="row justify-content-between mx-0">
-                      <h6 className="text-danger">${product.price}</h6>
-                      {product.inStock > 0 ? (
-                        <h6 className="text-danger">
-                          In Stock: {product.inStock}
-                        </h6>
-                      ) : (
-                        <h6 className="text-danger">Out Stock</h6>
-                      )}
-                    </div> */}
-
-                  <p>
-                    {/* {room.Extra1} */}
-                    {room.price}
-                  </p>
-                  <nav>
-                  <li>{room.Extra1}</li>
-                  <li>{room.Extra2}</li>
-                  <li>{room.Extra3}</li>
-                  </nav>
-
-                  <img className={styles.book} src="https://image.freepik.com/free-vector/flat-hotel-booking-background_23-2148142886.jpg"></img>
-                  
-                  {/* 
-                    <div className="row justify-content-between mx-0">
-                      {!auth.user || auth.user.role !== "admin"
-                        ? userLink()
-                        : adminLink()}
-                    </div> */}
+          return (
+            <>
+              <div key={index} className={styles.div}>
+                <Head>
+                  <title className={styles.title}>Detail Home</title>
+                </Head>
+                <div className={styles.imgHeroo}>
+                  <img
+                    src={images[tab]}
+                    alt={images[tab]}
+                    className={styles.imgHeroo}
+                    style={{
+                      height: "300px",
+                      width: "600px",
+                    }}
+                  />
+                  <div className={styles.img} style={{ cursor: "pointer" }}>
+                    {images.map((img, index) => (
+                      <img
+                        key={index}
+                        src={img}
+                        alt={img}
+                        className={`${styles.imgs}${isActive(index)}`}
+                        style={{ height: "50px", width: "50px" }}
+                        onClick={() => setTab(index)}
+                      />
+                    ))}
+                  </div>
                 </div>
-                {/* </div> */}
-              </>
-            );
-          }
-        })}
-      </section>
+
+                <div className={styles.card_text}>
+                  {" "}
+                  <span className={styles.spanTitle}> Room Data</span>
+                  {/* <div className={styles.data}>
+            <span>location : </span>
+            {room.location}
+          </div> */}
+                  <div className={styles.data}>
+                    <span>price : </span>
+                    {room.price}
+                  </div>
+                  {/* <div className={styles.data}>
+                    <span>facilities </span>
+                    <img src={hotelsFilter[0].img}></img>{" "}
+                  </div> */}
+                  {hotelsFilter.length > 0 && (
+                    <>
+                      <div className={styles.data}>
+                        <span>Hotel Name : {hotelsFilter[0].hotelName} </span>
+                        {room.Extra1}
+                      </div>
+                      <div className={styles.data}>
+                        <span>Location : {hotelsFilter[0].Location}</span>
+                        {room.Extra2}
+                      </div>
+                      <div className={styles.data}>
+                        <span>Rating :{hotelsFilter[0].Rating} </span>
+                        {room.Extra1}
+                      </div>
+                      <div className={styles.data}>Available</div>
+                    </>
+                  )}
+                </div>
+           <ModelBooking />
+              </div>
+            </>
+          );
+        }
+      })}
     </>
   );
 }

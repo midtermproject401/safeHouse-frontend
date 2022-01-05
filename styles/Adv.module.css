@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+
 .form {
   position: relative;
   z-index: 1;
@@ -44,9 +46,11 @@
   background: #3f5870;
 }
 .title {
-  font-size: 30px;
+  font-family: "Oooh Baby", cursive;
+  font-size: 50px;
   font-weight: bold;
   padding: 15px;
   margin: px;
   color: #3a3535;
+  text-align: center;
 }

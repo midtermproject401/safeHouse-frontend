@@ -19,12 +19,12 @@ a {
 @import url("./profile.css");
 
 /* LAnding */
-.section {
+/* .section {
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
-}
+} */
 
 /* ----------- Footer2 ------------- */
-@import url("./Footer2.css");
+/* @import url("./Footer2.css"); */
 @import url("./drop.css");

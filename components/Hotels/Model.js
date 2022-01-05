@@ -14,7 +14,7 @@ export default function ModelBooking() {
     e.preventDefault();
     swal({
         title: "Thanks for booking",
-        text: "your booking went succesfully we'll check your validation of payment!",
+        text: "your booking went succesfully we will check your validation of payment!",
         icon: "success",
       });  };
 
@@ -37,7 +37,7 @@ export default function ModelBooking() {
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                We will never share your email with anyone else.
               </Form.Text>
             </Form.Group>
 

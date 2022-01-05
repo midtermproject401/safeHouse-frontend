@@ -8,6 +8,8 @@ import Banner from "./Banner";
 import styles from "../../styles/RoomCards.module.css";
 import { filterHotels, getRooms } from "../../store/actions/action";
 import Head from "next/head";
+import ModelBooking from "./Model";
+
 
 export default function SingleRoom() {
   const dispatch = useDispatch();
@@ -109,6 +111,7 @@ export default function SingleRoom() {
                     </>
                   )}
                 </div>
+           <ModelBooking />
               </div>
             </>
           );

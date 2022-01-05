@@ -1,6 +1,7 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 // lllll
 // import { ChakraProvider } from "@chakra-ui/react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Layout from "../components/Layout";
 import "../styles/globals.css";

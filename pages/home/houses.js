@@ -67,8 +67,7 @@ const Houses = ({ houses }) => {
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -86,7 +85,6 @@ const Houses = ({ houses }) => {
               id={styles.ss}
               required
               placeholder="Location"
-              onChange={handleChange}
             >
               <option value="">Select the value</option>
               <option value="amman">Amman</option>
@@ -95,8 +93,7 @@ const Houses = ({ houses }) => {
               <option value="zarqa">zarqa</option>
             </select>
             <svg
-              class="bk-icon -streamline-bed"
-              class={styles.check}
+              className={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -134,7 +131,6 @@ const Houses = ({ houses }) => {
                     justifyContent="center"
                   >
                     <Box
-                      bg={useColorModeValue("white", "gray.800")}
                       maxW="sm"
                       borderWidth="1px"
                       rounded="lg"
@@ -207,10 +203,7 @@ const Houses = ({ houses }) => {
                           alignContent="center"
                         >
                           {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-                          <Box
-                            fontSize="2xl"
-                            color={useColorModeValue("gray.800", "white")}
-                          >
+                          <Box fontSize="2xl">
                             <Box as="span" color={"gray.600"} fontSize="lg">
                               $
                             </Box>

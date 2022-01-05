@@ -67,6 +67,7 @@ const Houses = ({ houses }) => {
   return (
     <>
       <ChakraProvider>
+
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg

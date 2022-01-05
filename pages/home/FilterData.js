@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChakraProvider } from "@chakra-ui/react";
 import styles from "../../styles/House.page.module.css";
 
+
 import swal from "sweetalert";
 import { useEffect } from "react";
 import {
@@ -30,10 +31,31 @@ const data = {
 const FilterData = () => {
   const state = useSelector((state) => state);
 
+  const [liked, setLiked] = useState({
+    active: null,
+    love: false,
+    obj: state.data.filterDataHouse,
+  });
+
   const dispatch = useDispatch();
 
-  function handleFav(house) {
+  function handleFav(house, index) {
     dispatch(addToCart(house));
+    function toogel(index) {
+      setLiked({ ...liked, active: liked.obj[index] });
+      console.log(liked.obj[index]);
+    }
+    function tog(index) {
+      console.log(state.data.filterDataHouse[index].id);
+      console.log(liked.obj[index].id);
+
+      if (liked.obj[index].id == state.data.filterDataHouse[index].id) {
+        setLiked({ ...liked, love: true });
+        console.log(liked, ";;;;;;;;;;;;;;;;;;;;,,,");
+      }
+    }
+    toogel(index);
+    tog(index);
   }
 
   return (
@@ -41,6 +63,7 @@ const FilterData = () => {
       <ChakraProvider>
         <div className={styles.card}>
           {state.data.filterDataHouse.map((house) => {
+
             return (
               <>
                 <Flex
@@ -50,7 +73,7 @@ const FilterData = () => {
                   justifyContent="center"
                 >
                   <Box
-                    bg={useColorModeValue("white", "gray.800")}
+
                     maxW="sm"
                     borderWidth="1px"
                     rounded="lg"
@@ -68,7 +91,7 @@ const FilterData = () => {
                       <a>
                         <Image
                           src={house.imgHero}
-                          alt={`Picture of ${data.name}`}
+
                           roundedTop="lg"
                           width={500}
                           height={500}
@@ -77,18 +100,9 @@ const FilterData = () => {
                     </Link>
 
                     <Box p="6">
-                      <Box d="flex" alignItems="baseline">
-                        {data.isNew && (
-                          <Badge
-                            rounded="full"
-                            px="2"
-                            fontSize="0.8em"
-                            colorScheme="red"
-                          >
-                            {house.state}
-                          </Badge>
-                        )}
-                      </Box>
+
+
+                      <Box d="flex" alignItems="baseline"></Box>
                       <Flex
                         mt="1"
                         justifyContent="space-between"
@@ -125,7 +139,6 @@ const FilterData = () => {
                         {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
                         <Box
                           fontSize="2xl"
-                          color={useColorModeValue("gray.800", "white")}
                         >
                           <Box as="span" color={"gray.600"} fontSize="lg">
                             $
@@ -152,6 +165,7 @@ const FilterData = () => {
                             <Link href={`/home/${house.id}`}>
                               <a className={styles.show}>Show more ...</a>
                             </Link>
+
                           </Text>
                         </Box>
                       </Flex>

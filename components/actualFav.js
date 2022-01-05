@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteFromCart } from "../../store/actions/action";
+import { deleteFromCart } from "../store/actions/action";
 import Link from "next/link";
 import Image from "next/image";
 import { ChakraProvider } from "@chakra-ui/react";
-import styles from "../../styles/House.page.module.css";
+import styles from "../styles/House.page.module.css";
 // import {FontAwesomeIconfrom} "react-icons/fa";
 import { BsFillArchiveFill } from "react-icons/bs";
 
@@ -38,8 +38,8 @@ export default function Favaroite() {
 
   return (
     <>
-      <h1 className={styles.spancart}>Favariote Houses</h1>
-      {/* <span className={styles.spancart}>{state.cart.count}</span> */}
+      {state.cart.count === 0 && <h2 className="favH2">Empty</h2>}
+      {}
       <div className={styles.card}>
         {state.cart.cartProducts.map((house) => {
           return (
@@ -155,7 +155,6 @@ export default function Favaroite() {
           );
         })}
       </div>
-      ;
     </>
   );
 }

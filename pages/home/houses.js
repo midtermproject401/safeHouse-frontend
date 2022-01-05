@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import FilterData from "./FilterData";
-// import React, {  } from "react";
-import { LoginContext } from "../../context/loginContext";
 import styles from "../../styles/House.page.module.css";
 import { ChakraProvider } from "@chakra-ui/react";
+import swal from "sweetalert";
 
 import {
   addToCart,
@@ -13,7 +12,6 @@ import {
   filterRegion,
 } from "../../store/actions/action";
 import { useSelector, useDispatch } from "react-redux";
-
 import { useEffect } from "react";
 import {
   Flex,
@@ -37,12 +35,10 @@ const data = {
   rating: 4.2,
   numReviews: 34,
 };
-
 export const getStaticProps = async () => {
   const res = await fetch("https://safe---house.herokuapp.com/api/v1/house");
 
   const data = await res.json();
-  console.log(5555555, data);
   return {
     props: { houses: data },
   };
@@ -53,58 +49,26 @@ const Houses = ({ houses }) => {
   const dispatch = useDispatch();
   function handleFav(house) {
     dispatch(addToCart(house));
-    console.log(house);
+    swal("Added!", "Check your profile!", "success");
   }
 
   const handleChange = (e) => {
     e.preventDefault();
 
-    console.log(e.target.value);
     dispatch(filterHouse(e.target.value));
   };
 
   useEffect(() => {
     dispatch(featchHouses());
   }, []);
-  // const chatBtn = (house) => {
-  //   let usernameValue = user.username
-  //   let userID =state.data
-  //   console.log(111111, userID);
-  // //  let c =  dispatch(house);
-  //   // console.log(55555, c);
-
-  //   var item = houses.filter(function(x){
-  //     return x.id === x.location;
-  //   })[0];
-
-  //   // let x = item.location
-  // //   // let adValue = houses. ;
-  // //   console.log(55555, item);
-  // //  let mapArr = houses.map(( item , key) =>{
-  // //     let adValue = item
-  // //     console.log(66666,adValue);
-  // //   })
-  // //   console.log(77777,mapArr);
-
-  //   // const result = inventory.find( ({ name }) => name === 'cherries' );
-  //   // const result = mapArr.find((item) => item === 'Amman')
-  //   // console.log(77777,result);
-
-  //   let api = `https://houses--safe.herokuapp.com/chat.html?username=${usernameValue}&Advname=emad`
-  //   window.open(api)
-  // }
-  // console.log(111111, user.username);
-  // console.log(222222 , `https://safe---house.herokuapp.com/api/v1/house`)
-  // console.log(3333);
   return (
     <>
       <ChakraProvider>
-        {/* <h1>all houses</h1> */}
         <div className={styles.accommodation}>
           <form className={styles.form}>
             <svg
-              // class="bk-icon -streamline-bed"
-              className={styles.check}
+              class="bk-icon -streamline-bed"
+              class={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -122,6 +86,7 @@ const Houses = ({ houses }) => {
               id={styles.ss}
               required
               placeholder="Location"
+              onChange={handleChange}
             >
               <option value="">Select the value</option>
               <option value="amman">Amman</option>
@@ -130,7 +95,8 @@ const Houses = ({ houses }) => {
               <option value="zarqa">zarqa</option>
             </select>
             <svg
-              className={styles.check}
+              class="bk-icon -streamline-bed"
+              class={styles.check}
               height="24"
               width="24"
               viewBox="0 0 24 24"
@@ -157,146 +123,129 @@ const Houses = ({ houses }) => {
         </div>
 
         <div className={styles.card}>
-          {houses.map((house) => {
-            return (
-              <>
-                <Flex
-                  p={50}
-                  w="full"
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <Box
-                    // bg={useColorModeValue("white", "gray.800")}
-                    maxW="sm"
-                    borderWidth="1px"
-                    rounded="lg"
-                    shadow="lg"
-                    position="relative"
+          {!state.data.show &&
+            houses.map((house) => {
+              return (
+                <>
+                  <Flex
+                    p={50}
+                    w="full"
+                    alignItems="center"
+                    justifyContent="center"
                   >
-                    <Circle
-                      size="10px"
-                      position="absolute"
-                      top={2}
-                      right={2}
-                      bg="red.200"
-                    />
-                    <Link href={"/home/" + house.id} key={house.id}>
-                      <a>
-                        <Image
-                          src={house.imgHero}
-                          alt={`Picture of ${data.name}`}
-                          roundedTop="lg"
-                          width={500}
-                          height={500}
-                        />
-                      </a>
-                    </Link>
+                    <Box
+                      bg={useColorModeValue("white", "gray.800")}
+                      maxW="sm"
+                      borderWidth="1px"
+                      rounded="lg"
+                      shadow="lg"
+                      position="relative"
+                    >
+                      <Circle
+                        size="10px"
+                        position="absolute"
+                        top={2}
+                        right={2}
+                        bg="red.200"
+                      />
+                      <Link href={"/home/" + house.id} key={house.id}>
+                        <a>
+                          <Image
+                            src={house.imgHero}
+                            alt={`Picture of ${data.name}`}
+                            roundedTop="lg"
+                            width={500}
+                            height={500}
+                          />
+                        </a>
+                      </Link>
 
-                    <Box p="6">
-                      <Box d="flex" alignItems="baseline">
-                        {data.isNew && (
-                          <Badge
-                            rounded="full"
-                            px="2"
-                            fontSize="0.8em"
-                            colorScheme="red"
-                          >
-                            Available
-                          </Badge>
-                        )}
-                      </Box>
-                      <Flex
-                        mt="1"
-                        justifyContent="space-between"
-                        alignContent="center"
-                      >
-                        <Box
-                          fontSize="2xl"
-                          fontWeight="semibold"
-                          as="h4"
-                          lineHeight="tight"
-                          isTruncated
-                        >
-                          {house.location}
-                        </Box>
-                        <Tooltip
-                          label="Add to cart"
-                          bg="white"
-                          placement={"top"}
-                          color={"gray.800"}
-                          fontSize={"1.2em"}
-                        >
-                          <chakra.a href={"#"} display={"flex"}>
-                            {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
-                          </chakra.a>
-                        </Tooltip>
-                      </Flex>
-                      <Text fontSize={"sm"} color={"gray.500"}>
-                        {house.state}
-                      </Text>
-                      <Flex
-                        justifyContent="space-between"
-                        alignContent="center"
-                      >
-                        {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
-                        <Box
-                          fontSize="2xl"
-                          // color={useColorModeValue("gray.800", "white")}
-                        >
-                          <Box as="span" color={"gray.600"} fontSize="lg">
-                            $
-                          </Box>
-                          {house.price}
-
-                          <Text color={"gray.500"}>
-                            <button
-                              onClick={() => {
-                                handleFav(house);
-                              }}
+                      <Box p="6">
+                        <Box d="flex" alignItems="baseline">
+                          {data.isNew && (
+                            <Badge
+                              rounded="full"
+                              px="2"
+                              fontSize="0.8em"
+                              colorScheme="red"
                             >
-                              add to fav
-                            </button>
-                          </Text>
+                              {house.state}
+                            </Badge>
+                          )}
                         </Box>
-                      </Flex>
-                    </Box>
-                  </Box>
-                </Flex>
-              </>
-            );
-          })}
-        </div>
-        {/* <div> */}
-        {/* {!state.data.show &&
-          houses.map((house) => (
-            <>
-              <Link href={"/home/" + house.id} key={house.id}>
-                <a>
-                  <img
-                    alt={"img fav"}
-                    src={house.imgHero}
-                    width={500}
-                    height={500}
-                  />
-                </a>
-              </Link>
-              <button
-                onClick={() => {
-                  handleFav(house);
-                }}
-              >
-                add to fav
-              </button>
+                        <Flex
+                          mt="1"
+                          justifyContent="space-between"
+                          alignContent="center"
+                        >
+                          <Box
+                            fontSize="2xl"
+                            fontWeight="semibold"
+                            as="h4"
+                            lineHeight="tight"
+                            isTruncated
+                          >
+                            {house.location}
+                          </Box>
+                          <Tooltip
+                            label="Add to cart"
+                            bg="white"
+                            placement={"top"}
+                            color={"gray.800"}
+                            fontSize={"1.2em"}
+                          >
+                            <chakra.a href={"#"} display={"flex"}>
+                              {/* <Icon as={FiShoppingCart} h={7} w={7} alignSelf={"center"} /> */}
+                            </chakra.a>
+                          </Tooltip>
+                        </Flex>
+                        <Text fontSize={"sm"} color={"gray.500"}>
+                          {house.Description}
+                        </Text>
+                        <Flex
+                          justifyContent="space-between"
+                          alignContent="center"
+                        >
+                          {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
+                          <Box
+                            fontSize="2xl"
+                            color={useColorModeValue("gray.800", "white")}
+                          >
+                            <Box as="span" color={"gray.600"} fontSize="lg">
+                              $
+                            </Box>
+                            {house.price}
 
-              <button>rent</button>
-              <h3>{house.location}</h3>
-              <h3>{house.price}</h3>
-              <h3>{house.state}</h3>
-            </>
-          ))}
-      </div>
-      {state.data.show && <FilterData />} */}
+                            <Text color={"gray.500"}>
+                              <button
+                                onClick={() => {
+                                  handleFav(house);
+                                }}
+                              >
+                                <svg
+                                  width="24"
+                                  height="24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fillRule="evenodd"
+                                  clipRule="evenodd"
+                                  className={styles.svg}
+                                >
+                                  <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181" />
+                                </svg>{" "}
+                              </button>
+                              <Link href={`/home/${house.id}`}>
+                                <a className={styles.show}>Show more ...</a>
+                              </Link>
+                            </Text>
+                          </Box>
+                        </Flex>
+                      </Box>
+                    </Box>
+                  </Flex>
+                </>
+              );
+            })}
+        </div>
         {state.data.show && <FilterData />}
       </ChakraProvider>
     </>

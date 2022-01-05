@@ -149,6 +149,36 @@
   grid-template-columns: auto auto auto;
   grid-gap: 80px;
 }
+
+.svg {
+  position: relative;
+  left: 250px;
+  bottom: 30px;
+}
+.svg2 {
+  position: relative;
+  left: 250px;
+  bottom: 30px;
+}
+.show {
+  position: relative;
+  height: 30px;
+  right: 20px;
+  top: 10px;
+  box-shadow: inset 3 0 0px 0px #a9abad;
+  background-color: rgb(243, 242, 240);
+  background: transparent;
+  font-size: 15px;
+}
+.spancart {
+  font-family: "Oooh Baby", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 20px;
+  color: #3a3535;
+  text-align: left;
+}
 .hart {
   position: relative;
   left: 300px;

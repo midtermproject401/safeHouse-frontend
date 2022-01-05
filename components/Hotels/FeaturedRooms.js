@@ -18,11 +18,8 @@ export default function FeaturedRooms() {
   featured.push(rooms[0], rooms[1], rooms[2]);
 
   const dipatcher = (id) => {
-    console.log("dispatch", id);
     dispatch(displayRoom(id));
   };
-
-  console.log(featured);
 
   useEffect(() => {
     dispatch(getRooms(1));

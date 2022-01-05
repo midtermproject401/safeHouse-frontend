@@ -1,12 +1,9 @@
 import React from "react";
-import  {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 export default function Advs() {
   const { register, handleSubmit } = useForm();
-  function onSubmit(data) {
-    console.log(data);
-    console.log("hell0");
-  }
+  function onSubmit(data) {}
   return (
     <>
       <div>
@@ -80,16 +77,16 @@ export default function Advs() {
             type="text"
             name="phoneNumber"
             {...register("phoneNumber", { required: true })} */}
-          {/* /> */}
-          {/* <input type="submit" />
-        </from> */} 
+        {/* /> */}
+        {/* <input type="submit" />
+        </from> */}
         <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('test', { required: true })} />
+          <input {...register("test", { required: true })} />
 
-      {/* {errors.email && <span>This email is required</span>} */}
+          {/* {errors.email && <span>This email is required</span>} */}
 
-      <input type="submit" />
-    </form>
+          <input type="submit" />
+        </form>
       </div>
     </>
   );

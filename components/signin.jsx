@@ -13,20 +13,7 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState([]);
   const [switcher, setSwitcher] = useState(false);
-  console.log("username>>>", username);
-  console.log("password>>>", password);
-  console.log("role>>>", role);
 
-  // function handleChange(e) {
-  //   console.log("fffffffffffffffffff", e.target.username);
-  //   console.log("username", username);
-  //   console.log("password", password);
-  //   console.log("role", role);
-
-  //   setUsername(e.target.value);
-  //   setPassword(e.target.value);
-  //   setRole(e.target.value);
-  // }
   function handleSubmit(e) {
     e.preventDefault();
     loginFunction(username, password);

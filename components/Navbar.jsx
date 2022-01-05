@@ -37,31 +37,26 @@ const Navbar = () => {
                   <a className={styles.listItem}>Homepage</a>
                 </Link>
               </li>
-
               <li className={styles.listItem}>
                 <Link href="/home/houses">
                   <a className={styles.listItem}>Houses</a>
                 </Link>
               </li>
-
               <li className={styles.listItem}>
                 <Link href="/home/Advs">
                   <a className={styles.listItem}>Creat Adds</a>
                 </Link>
               </li>
-
               <li className={styles.listItem}>
                 <Link href="/hotels">
                   <a className={styles.listItem}>Hotels</a>
                 </Link>
               </li>
-
               <li className={styles.listItem}>
                 <Link href="/profile">
                   <a className={styles.listItem}>Profile </a>
                 </Link>
               </li>
-
               <li className={styles.logoutB} onClick={logoutFunction}>
                 <Link href="/">
                   <a className={styles.logoutB}>logout</a>

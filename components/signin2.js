@@ -22,18 +22,12 @@ export default function SplitScreen() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState([]);
   const [switcher, setSwitcher] = useState(false);
-  console.log("username>>>", username);
-  console.log("password>>>", password);
-  console.log("role>>>", role);
 
   function handleSubmit(e) {
-    console.log("signin");
     e.preventDefault();
     loginFunction(username, password);
   }
   function handleSubmitSignup(e) {
-    console.log("signup");
-
     e.preventDefault();
     signupFunction(username, password, role);
   }

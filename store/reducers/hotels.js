@@ -5,7 +5,7 @@ let intial = {
   rooms: [],
   filterdRooms: [],
   activeRoom: "",
-  filteredHotel:[]
+  filteredHotel: [],
 };
 
 // reducer function :
@@ -13,7 +13,6 @@ const hotelReducer = (state = intial, action) => {
   const { type, payload } = action;
   switch (type) {
     case t.GET_DATA:
-      console.log(payload);
       state.hotels = payload;
       return { ...state, hotels: payload };
     case t.DISPLAY_DATA:
@@ -32,7 +31,6 @@ const hotelReducer = (state = intial, action) => {
       return { ...state, activeHotel: payload, hotels: hotels };
 
     case t.DISPLAY_ROOM:
-      console.log(payload);
       const displayRoom = state.rooms.map((room) => {
         if (room.id == payload) {
           return {
@@ -75,27 +73,22 @@ const hotelReducer = (state = intial, action) => {
         filterdRooms: [...state.filterdRooms, filterd],
         activeHotel: payload,
         activeRoom: payload,
-
       };
-      case "FILTERHOTEL":
-        let filterdhotels;
-        console.log(payload);
-        const hotelData = state.hotels.map((hotel) => {
-          if (
-            hotel.Location == payload 
-          ) {
-            return (filterdhotels = hotel);
-          }
-          return hotel;
-        });
-        return {
-          ...state,
-          hotels: hotelData,
-          filteredHotel: [...state.filteredHotel, filterdhotels],
-          activeHotel: payload,
-          activeRoom: payload,
-  
-        };
+    case "FILTERHOTEL":
+      let filterdhotels;
+      const hotelData = state.hotels.map((hotel) => {
+        if (hotel.Location == payload) {
+          return (filterdhotels = hotel);
+        }
+        return hotel;
+      });
+      return {
+        ...state,
+        hotels: hotelData,
+        filteredHotel: [...state.filteredHotel, filterdhotels],
+        activeHotel: payload,
+        activeRoom: payload,
+      };
 
     default:
       return state;

@@ -7,7 +7,6 @@ export const dataRed = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case "FETCH_USERS_SUCCESS":
-      console.log(payload);
       return {
         houses: payload,
         show: false,

@@ -4,16 +4,14 @@ import styles from "../../styles/RoomCards.module.css";
 import { filter } from "../../store/actions/action";
 import Title from "./Title";
 
-const RoomsFilter = ({rooms}) => {
+const RoomsFilter = ({ rooms }) => {
   // const { rooms } = useSelector((state) => state.hotels);
-  console.log(rooms,"rooooooooooooms");
   const dispatch = useDispatch();
 
   // create function to handle change the state in the store according to chosed item:
   const handleChange = (e) => {
     e.preventDefault();
     dispatch(filter(e.target.value));
-    console.log(e.target.value);
   };
   return (
     <section className={styles.filterContainer}>

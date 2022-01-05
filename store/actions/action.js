@@ -101,7 +101,6 @@ export const featchHouses = () => {
       .get("https://safe---house.herokuapp.com/api/v1/house")
       .then((response) => {
         const houses = response.data;
-        console.log(houses);
         dispatch(fetchUsersSuccess(houses));
       })
 

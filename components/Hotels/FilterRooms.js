@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import RoomCard from "./RoomCards ";
 
-const FilterRoom = () => {
+const FilterRoom = ({ rooms }) => {
   const { filterdRooms, activeHotel } = useSelector((state) => state.hotels);
 
   return (
     <>
-      {filterdRooms.map((room) => {
+      {rooms.map((room) => {
         if (
           room.accommodationType == activeHotel ||
           room.Sleeps == activeHotel ||

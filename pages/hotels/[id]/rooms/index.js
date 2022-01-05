@@ -10,7 +10,7 @@ import Title from "../../../../components/Hotels/Title";
 import Services from "../../../../components/Hotels/Services";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getRooms } from "../../../../store/actions/action";
+import { getRooms, displayRoom } from "../../../../store/actions/action";
 import FeaturedRooms from "../../../../components/Hotels/FeaturedRooms";
 import { useEffect } from "react";
 
@@ -56,6 +56,9 @@ export default function Rooms({ rooms, hotel }) {
     console.log("dispatch", id);
     dispatch(displayRoom(id));
   };
+  useEffect(() => {
+    dispatch(getRooms(hotel.id));
+  }, []);
 
   return (
     <>
@@ -70,7 +73,7 @@ export default function Rooms({ rooms, hotel }) {
         </Banner>
       </header>
       <RoomsFilter rooms={rooms} />
-      <FilterRoom room={rooms} />
+      <FilterRoom rooms={rooms} />
       {
         !activeHotel && (
           <section className={styles.featuredRooms}>

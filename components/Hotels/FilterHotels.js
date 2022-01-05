@@ -9,7 +9,7 @@ console.log(filteredHotel, activeHotel,"filteeeeeeeeeeeeeeeeer");
     <>
       {filteredHotel &&
       filteredHotel.map((hotel) => {
-        if (hotel.Location == activeHotel) {
+        if (hotel?.Location == activeHotel) {
           return (
             <HotelCard
               image={hotel.img}

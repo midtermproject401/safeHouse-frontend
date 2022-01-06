@@ -106,7 +106,6 @@ export default function Advs() {
               <Form.Group
                 className="mb-3"
                 controlId="formBasicPassword"
-                className={styles.formid}
               >
                 {/* <Form.Label>Add Images for your house</Form.Label> */}
                 <div className="m-3">
